@@ -1,5 +1,7 @@
 # 👋 Greetings!
 
+![Carrot](https://assets.digitalocean.com/articles/alligator/boo.svg)
+
 ## ❓ Who am i?
 I'm a backend developer wannabe that likes chairs and carrots.
 
@@ -13,12 +15,12 @@ I really like backend, but I also love low-level and other areas.
 Even if i'm a litte lazy sometimes I think I can accomplish everything given enough time.
 
 ### 🏫 Holberton School
-I learnt programming through a robotics workshop and other public schoolcextracurricular activities.
+I learnt programming through a robotics workshop and other public school extracurricular activities.
 However I was not happy with how little I have done in terms of software projects.
 So I decided to get serious and go to either uni or something else.
 
-I ended up going to something else. That something else was Holberton School, which is an
-on-site "bootcamp" where you learn how to code.
+I ended up going to something else.
+That something else was Holberton School, which is an on-site "bootcamp" where you learn how to code.
 It takes you from low-level programming with C to high-level with Python and JS (and a final project).
 It tries to simulate a working environment to help you develop your soft skills which I found
 really helpful, as I lacked plenty of social skills that I wanted to work on.
@@ -45,11 +47,11 @@ Even if I learned this framework as a stopgap solution, I ended up loving it.
 It's a very developer-friendly Restful API framework for dart,
 being able to start a project with "create" and add routes with "add route".
 For more complex problems, it is also very comfortable,
-being able to define your middleware, pre-server-run code and post-server-run code.
+letting you define your middleware, pre-server-run code and post-server-run code.
 The documentation is really, really good as well.
 
 All in all I would really recommend it to new developers.
-It is so easy to create a project and leave it working.
+It is just so easy to create a project and leave it working.
 And the fact that you can build your app with a single "build" command and then
 freely deploy it in the cloud with Globe with a few clicks is amazing.
 
