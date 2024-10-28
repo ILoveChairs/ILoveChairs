@@ -1,6 +1,6 @@
 # 👋 Greetings!
 
-![Carrot](https://assets.digitalocean.com/articles/alligator/boo.svg)
+![Carrot](./only_carrot.png)
 
 ## ❓ Who am i?
 I'm a backend developer wannabe that likes chairs and carrots.
