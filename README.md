@@ -1,8 +1,8 @@
-# 👋 Greetings!
+<h1 style="text-align: center; letter-spacing: 10px; font-family: 'Brush Script MT', sans-serif">Greetings!</h1>
 
 ![Carrot](./only_carrot.png)
 
-## ❓ Who am i?
+## ❓ _Who am i?_
 I'm a backend developer wannabe that likes chairs and carrots.
 
 I've grown up around computers, so eventually once I got into programming it was
@@ -45,14 +45,14 @@ I know a bunch of technologies, but i want to showcase my current favourites.
 ### 🐸 Dart Frog (Dart)
 Even if I learned this framework as a stopgap solution, I ended up loving it.
 It's a very developer-friendly Restful API framework for dart,
-being able to start a project with "create" and add routes with "add route".
+being able to start a project with `create` and add routes with `add route`.
 For more complex problems, it is also very comfortable,
 letting you define your middleware, pre-server-run code and post-server-run code.
 The documentation is really, really good as well.
 
 All in all I would really recommend it to new developers.
 It is just so easy to create a project and leave it working.
-And the fact that you can build your app with a single "build" command and then
+And the fact that you can build your app with a single `build` command and then
 freely deploy it in the cloud with Globe with a few clicks is amazing.
 
 ### 🍶 Flask (Python)
