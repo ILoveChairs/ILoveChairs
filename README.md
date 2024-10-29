@@ -1,4 +1,4 @@
-<h1 style="text-align: center; letter-spacing: 10px; font-family: 'Brush Script MT', sans-serif">Greetings!</h1>
+<h1 align="center">Greetings!</h1>
 
 ![Carrot](./only_carrot.png)
 
