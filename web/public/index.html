@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/index.css'>
+</head>
+<body>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+        const firebaseConfig = {
+          apiKey: "AIzaSyA6QwLBu5X5AzgDq81C5L1dXZ9E0xP-9vk",
+          authDomain: "matiasdavezac-3d8c8.firebaseapp.com",
+          projectId: "matiasdavezac-3d8c8",
+          storageBucket: "matiasdavezac-3d8c8.firebasestorage.app",
+          messagingSenderId: "72369303819",
+          appId: "1:72369303819:web:528377b378f7a80d17f20e",
+          measurementId: "G-PTZ5232TNL"
+        };
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+    <header>
+        <div id="header-top" class="header-div">
+            <div>
+                <p>LOGO PLACEHOLDER</p>
+            </div>
+            <div>
+                <p>OTHER PAGES</p>
+            </div>
+        </div>
+        <div id="header-bottom" class="header-div">
+            <p>NAV PLACEHOLDER</p>
+        </div>
+    </header>
+    <main class="main">
+        <p>MAIN PLACEHOLDER</p>
+    </main>
+    <footer class="footer">
+        <p>FOOTER PLACEHOLDER</p>
+    </footer>
+</body>
+</html>
