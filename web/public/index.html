@@ -1,16 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="">
 <head>
+    <title>Matias Davezac Portfolio Page</title>
+    <meta name="description" content="See a showcase about myself, my history and my portfolio." />
+    <base href="/web/public/"/>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name="robots" content="nofollow">
+    <meta name="googlebot" content="nofollow, notranslate">
+
+    <!-- Preloads -->
+    <link rel="dns-prefetch" href="https://www.gstatic.com"/>
+    <link rel="preload" href="images/carrot.png" as="image" type="image/png"/>
+    <link rel="preload" href="images/chess_board.webp" as="image" type="image/png"/>
+    <link rel="preload" href="https://fonts.gstatic.com/s/atomicage/v27/f0Xz0eug6sdmRFkYZZGL18bn9A.woff2" crossorigin="anonymous" as="font" type="font/woff2"/>
+
+    <!-- Atomic Age Font Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atomic+Age&display=swap" rel="stylesheet">
+
+    <!-- CSS START -->
     <link rel='stylesheet' type='text/css' media='screen' href='styles/index.css'>
+    <!-- CSS END -->
+
+    <!-- Header space handler -->
+    <script type="module">
+        function headerSpaceHandler(event) {
+            let header = document.getElementById('body-header');
+            let headerStyle = window.getComputedStyle(header);
+            let height = headerStyle.getPropertyValue('height');
+
+            let body = document.getElementById('body');
+            body.style.paddingTop = height;
+        }
+        addEventListener("load", headerSpaceHandler);
+        addEventListener("resize", headerSpaceHandler);
+    </script>
 </head>
-<body>
+<body id="body">
+    <!-- Header -->
+    <header id="body-header" class="header">
+        <!-- Top -->
+        <div id="header-top" class="header-div">
+            <div>
+                <h1 id="header-name" class="atomic-age unselectable" unselectable="on">
+                    Matias Davezac
+                </h1>
+            </div>
+                <nav id="header-top-nav" class="header-nav">
+                    <ul>
+                        <li><a href="#header-top">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#prev">Previous projects</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- Bottom -->
+        <div id="header-bottom" class="header-div">
+            <nav id="header-bottom-nav" class="header-nav">
+                <ul>
+                    <li><a class="unselectable" href="#">Start</a></li>
+                    <li><a class="unselectable" href="#chess-section">Chess</a></li>
+                    <li><a class="unselectable" href="#body-footer">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Main -->
+    <main id="body-main" class="main">
+        <!-- Presentation -->
+        <section id="presentation-section" class="main-section">
+            <div>
+                <img id="carrot" class="unselectable" src="images/carrot.png" style="max-height: 387px; max-width: 387px;" />
+            </div>
+            <div>
+                <h1 id="presentation-name" class="section-desc atomic-age">MATíAS DAVEZAC</h1>
+                <p id="presentation-desc" class="section-desc">Backend Developer</p>
+            </div>
+        </section>
+        <!-- Chess -->
+        <section id="chess-section" class="main-section inverted-row">
+            <div>
+                <img id="chess" src="images/chess_board.webp" style="max-height: 562px; max-width: 564px;" />
+            </div>
+            <div>
+                <h1 id="chess-name" class="section-desc">CHESS</h1>
+                <p id="chess-desc" class="section-desc">Stuff</p>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer id="body-footer" class="footer">
+        <div id="contact-info">
+            <p>Location: Uruguay</p>
+            <p>Phone number: +598 96 480 140</p>
+            <p>email: matiasdavezac@gmail.com</p>
+        </div>
+        <div id="contact-links">
+            <p>github</p>
+            <p>linkedin</p>
+        </div>
+    </footer>
+    <!-- Firebase -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
         const firebaseConfig = {
           apiKey: "AIzaSyA6QwLBu5X5AzgDq81C5L1dXZ9E0xP-9vk",
           authDomain: "matiasdavezac-3d8c8.firebaseapp.com",
@@ -21,26 +118,6 @@
           measurementId: "G-PTZ5232TNL"
         };
         const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
     </script>
-    <header>
-        <div id="header-top" class="header-div">
-            <div>
-                <p>LOGO PLACEHOLDER</p>
-            </div>
-            <div>
-                <p>OTHER PAGES</p>
-            </div>
-        </div>
-        <div id="header-bottom" class="header-div">
-            <p>NAV PLACEHOLDER</p>
-        </div>
-    </header>
-    <main class="main">
-        <p>MAIN PLACEHOLDER</p>
-    </main>
-    <footer class="footer">
-        <p>FOOTER PLACEHOLDER</p>
-    </footer>
 </body>
 </html>
