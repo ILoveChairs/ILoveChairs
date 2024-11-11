@@ -18,6 +18,9 @@
         "headers": [ {
             "key": "Access-Control-Allow-Origin",
             "value": "*"
+        }, {
+            "key": "Cache-Control",
+            "value": "max-age=86400"
         } ]
     }, {
         "source": "**/*.@(jpg|png|webp|gif)",
@@ -26,7 +29,7 @@
             "value": "*"
         }, {
             "key": "Cache-Control",
-            "value": "max-age=7200"
+            "value": "max-age=86400"
         } ]
     }, {
         "source": "404.html",
