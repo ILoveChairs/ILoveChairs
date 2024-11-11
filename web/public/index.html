@@ -9,11 +9,14 @@
     <meta name="robots" content="nofollow">
     <meta name="googlebot" content="nofollow, notranslate">
 
+    <!-- SRC -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'; img-src *;">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <!-- Preloads -->
-    <link rel="preload" href="images/carrot.png" as="image" type="image/png"/>
+    <link rel="preload" href="images/carrot.webp" as="image" type="image/png"/>
     <link rel="preload" href="images/chess_board.webp" as="image" type="image/png"/>
 
     <!-- Atomic Age Font Loading -->
@@ -33,19 +36,8 @@
     <link rel='stylesheet' type='text/css' media='screen' href='styles/index.css'>
     <!-- CSS END -->
 
-    <!-- Header space handler -->
-    <script type="module">
-        function headerSpaceHandler(event) {
-            let header = document.getElementById('body-header');
-            let headerStyle = window.getComputedStyle(header);
-            let height = headerStyle.getPropertyValue('height');
-
-            let body = document.getElementById('body');
-            body.style.paddingTop = height;
-        }
-        addEventListener("load", headerSpaceHandler);
-        addEventListener("resize", headerSpaceHandler);
-    </script>
+    <!-- JS -->
+    <script type="module" src="scripts/index.js"></script>
 </head>
 <body id="body">
     <!-- Header -->
