@@ -308,9 +308,16 @@ a:visited {
     min-height: 128px;
 }
 
+#carrot {
+    max-height: 387px;
+    max-width: 387px;
+}
+
 #chess {
     min-width: 256px;
     min-height: 256px;
+    max-height: 562px;
+    max-width: 564px;
 }
 
 #presentation-section {
