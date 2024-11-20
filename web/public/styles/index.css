@@ -263,10 +263,49 @@ a:visited {
     padding: 0px;
     display: flex;
     flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+
+.contact-div {
+    padding: 50px;
+    display: flex;
+    flex-flow: row;
     justify-content: center;
     align-items: center;
+    align-content: center;
     flex-wrap: nowrap;
 }
+
+.contact-icon-div {
+    padding-right: 10px;
+    display: flex;
+}
+
+.contact-icon {
+    width: 32px;
+    height: 32px;
+}
+
+#phone-icon {
+    background: url(../images/page_sprites.gif) 0 0;
+}
+#location-icon {
+    background: url(../images/page_sprites.gif) -31px 0;
+}
+#email-icon {
+    background: url(../images/page_sprites.gif) -64px 0;
+}
+#linkedin-logo {
+    background: url(../images/page_sprites.gif) 0 -32px;
+}
+#github-logo {
+    background: url(../images/page_sprites.gif) -32px -32px;
+}
+
 /* HEADER AND FOOTER END */
 
 /* INDEX START */

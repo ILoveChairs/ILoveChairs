@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="">
 <head>
+    <!-- Metadata -->
     <title>Matias Davezac Portfolio Page</title>
     <meta name="description" content="See a showcase about myself, my history and my portfolio." />
     <meta charset='utf-8'>
@@ -16,8 +17,9 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <!-- Preloads -->
-    <link rel="preload" href="images/carrot.webp" as="image" type="image/png"/>
-    <link rel="preload" href="images/chess_board.webp" as="image" type="image/png"/>
+    <link rel="preload" href="images/carrot.webp" as="image" type="image/webp"/>
+    <link rel="preload" href="images/chess_board.webp" as="image" type="image/webp"/>
+    <link rel="preload" href="images/page_sprites.gif" as="image" type="image/gif"/>
 
     <!-- CSS -->
     <link rel='stylesheet' type='text/css' media='screen' href="styles/atomic-font.css">
@@ -76,20 +78,67 @@
             </div>
             <div>
                 <h1 id="chess-name" class="section-desc">CHESS</h1>
-                <p id="chess-desc" class="section-desc">Stuff</p>
+                <p id="chess-desc" class="section-desc">Game...</p>
             </div>
         </section>
     </main>
     <!-- Footer -->
     <footer id="body-footer" class="footer">
-        <div id="contact-info">
-            <p>Location: Uruguay</p>
-            <p>Phone number: +598 96 480 140</p>
-            <p>email: matiasdavezac@gmail.com</p>
+        <!-- Info -->
+        <div id="contact-info" class="body-footer-div">
+            <!-- Location -->
+            <div id="location-div" class="contact-div">
+                <div class="contact-icon-div">
+                    <a href="https://www.google.com/maps/place/Uruguay/" target="_blank">
+                        <div id="location-icon" class="contact-icon">
+                        </div>
+                    </a>
+                </div>
+                <p>Location: Uruguay</p>
+            </div>
+            <!-- Phone -->
+            <div id="phone-div" class="contact-div">
+                <div class="contact-icon-div">
+                    <a href="tel: +59896480140">
+                        <div id="phone-icon" class="contact-icon">
+                        </div>
+                    </a>
+                </div>
+                <p>Phone number: +598 96 480 140</p>
+            </div>
+            <!-- Email -->
+            <div id="email-div" class="contact-div">
+                <div class="contact-icon-div">
+                    <a href="mailto: matiasdavezac@gmail.com">
+                        <div id="email-icon" class="contact-icon">
+                        </div>
+                    </a>
+                </div>
+                <p>email: matiasdavezac@gmail.com</p>
+            </div>
         </div>
-        <div id="contact-links">
-            <p>github</p>
-            <p>linkedin</p>
+        <!-- Websites -->
+        <div id="contact-links" class="body-footer-div">
+            <!-- Github -->
+            <div id="github-div" class="contact-div">
+                <div class="contact-icon-div">
+                    <a href="https://github.com/ILoveChairs" target="_blank">
+                        <div id="github-logo" class="contact-icon">
+                        </div>
+                    </a>
+                </div>
+                <p>github</p>
+            </div>
+            <!-- Linkedin -->
+            <div id="linkedin-div" class="contact-div">
+                <div class="contact-icon-div">
+                    <a href="https://linkedin.com/in/matiasdavezac" target="_blank">
+                        <div id="linkedin-logo" class="contact-icon">
+                        </div>
+                    </a>
+                </div>
+                <p>linkedin</p>
+            </div>
         </div>
     </footer>
 </body>
