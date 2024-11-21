@@ -163,9 +163,9 @@ a:visited {
     background-color: var(--color-header);
 }
 
-.header-nav a {
+.header-nav li a {
     display: block;
-    padding: 0 2vw;
+    padding: 10px;
 }
 
 #header-top {
@@ -249,6 +249,11 @@ a:visited {
     align-items: center;
 }
 
+#header-bottom-nav li a {
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
 #header-bottom-nav a:hover {
     color: white;
     background-color: red;
@@ -270,8 +275,8 @@ a:visited {
 }
 
 
-.contact-div {
-    padding: 50px;
+.contact-div a {
+    margin: 50px;
     display: flex;
     flex-flow: row;
     justify-content: center;
@@ -280,12 +285,9 @@ a:visited {
     flex-wrap: nowrap;
 }
 
-.contact-icon-div {
-    padding-right: 10px;
-    display: flex;
-}
-
 .contact-icon {
+    margin-right: 10px;
+    display: block;
     width: 32px;
     height: 32px;
 }
