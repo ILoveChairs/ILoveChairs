@@ -23,7 +23,7 @@
             "value": "max-age=31536000"
         } ]
     }, {
-        "source": "**/*.@(jpg|png|webp|gif)",
+        "source": "**/*.@(jpg|png|webp|gif|svg)",
         "headers": [ {
             "key": "Access-Control-Allow-Origin",
             "value": "*"
@@ -48,6 +48,12 @@
         "headers": [ {
             "key": "Content-Security-Policy",
             "value": "default-src 'self'; img-src *;"
+        } ]
+    }, {
+        "source": "/",
+        "headers": [ {
+            "key": "Link",
+            "value": "</scripts/index.js>;rel=preload;as=script;nopush,</styles/index.css>;rel=preload;as=style;nopush,</styles/atomic-font.css>;rel=preload;as=style;nopush"
         } ]
     } ]
   }
