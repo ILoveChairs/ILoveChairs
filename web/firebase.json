@@ -53,7 +53,7 @@
         "source": "/",
         "headers": [ {
             "key": "Link",
-            "value": "</scripts/index.js>;rel=preload;as=script;nopush,</styles/index.css>;rel=preload;as=style;nopush,</styles/atomic-font.css>;rel=preload;as=style;nopush"
+            "value": "</scripts/index.js>;rel=preload;as=script;crossOrigin=anonymous;nopush,</styles/index.css>;rel=preload;as=style;nopush,</styles/atomic-font.css>;rel=preload;as=style;nopush"
         } ]
     } ]
   }
