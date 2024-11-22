@@ -1,4 +1,27 @@
 
+// * --- Constants ---
+
+const CHESSAPIURL = "https://chess-38e4.globeapp.dev/";
+
+const TABLEID = "chess-table";
+// ROWIDPREFIX + "y${y}"
+const ROWIDPREFIX = "chess-row-";
+// SQUAREIDPREFIX + "${x}y${y}"
+const SQUAREIDPREFIX = "chess-square-";
+
+const TABLECLASS = "chess-table";
+const ROWCLASS = "chess-row";
+const SQUARECLASS = "chess-square";
+
+const SELECTEDPIECECLASS = "chess-square-selected";
+
+const RESTARTBUTTONID = "chess-restart";
+const RESTARTBUTTONCLASS = "chess-button";
+
+const TABLEPARENTID = "";
+const PLACEHOLDERID = "";
+const PLAYBUTTONID = "";
+
 // * --- Common use ---
 
 const colors = Object.freeze({ 
@@ -47,6 +70,9 @@ class Board {
   }
 
   getSquareContent(square) {
+    if (!this.isSquareInside(square)) {
+      return null;
+    }
     for(const piece of this.listOfPieces) {
       if (piece.square.equalsTo(square)) {
         return piece;
@@ -394,21 +420,56 @@ class Pawn extends Piece {
   }
   getMoves(board) {
     const moves = [];
-    // TODO PAWN
+    const adder = this.color == colors.white ? 1 : -1;
+    // Forward
+    const f1 = Square(this.square.x, this.square.y + adder);
+    if (board.isSquareInside(f1)) {
+      const f1Content = board.getSquareContent(f1);
+      if (f1Content === null) {
+        moves.push(Move(this, f1));
+        const f2 = Square(f1.x, f1.y + adder);
+        if (
+          board.isSquareInside(f2) &&
+          ((this.color === colors.white && this.square.y == 2) ||
+          (this.color === colors.black && this.square.y == 7))
+        ) {
+          const f2Content = board.getSquareContent(f2);
+          if (f2Content === null || f2Content.color !== this.color) {
+            moves.push(Move(this, f1));
+          }
+        }
+      } else if (f1Content.color !== this.color) {
+        moves.push(Move(this, f1));
+      }
+    }
+    // Diagonals
+    function diag(xMod) {
+      const square = Square(this.square.x + xMod, this.square.y + adder);
+      if (board.isSquareInside(square)) {
+        const squareContent = board.getSquareContent(square);
+        if (squareContent !== null && squareContent.color !== this.color) {
+          moves.push(Move(this, square));
+        }
+      }
+    }
+    diag(-1);
+    diag(1);
     return moves;
   }
 }
 
-// * --- Facade ---
+// * --- Controllwe ---
 
-class ChessGame {
+class ChessController {
   constructor(color) {
     this.color = color;
     this.board = Board();
+    this.kingMoved = false;
+    this.towersThatMoved = [];
   }
 
   getMovesForPiece(piece) {
-    piece.getMoves(this.board);
+    return piece.getMoves(this.board);
   }
 
   getStatus() {
@@ -427,8 +488,7 @@ class ChessGame {
     // TODO
     const newBoard = this.board.applyMove(move);
     try {
-      const url = "";
-      const response = await fetch(url, {
+      const response = await fetch(CHESSAPIURL, {
         method: "POST",
         body: JSON.stringify({
           board: newBoard,
@@ -451,5 +511,56 @@ class ChessGame {
 // * --- Html table renderer ---
 
 class ChessGameRenderer {
+  static renderSquare(tableSquare) {
 
+  }
+  static render(board, clickedSquare = null) {
+    const table = window.getElementById();
+    if (clickedSquare !== null) {
+      const selectedPiece = t;
+    }
+  }
 }
+
+// * --- Facade ---
+
+class ChessGame {
+  constructor() {
+    this.controller == null;
+  }
+  startNewGame(){
+    this.controller = null;
+  }
+}
+
+// * --- Table
+
+// Create table
+const table = document.createElement('table');
+table.setAttribute("id", TABLEID);
+table.classList.add(TABLECLASS);
+for (let y = 1; y <= 8; y++) {
+  const row = document.createElement('tr');
+  row.setAttribute("id", `${ROWIDPREFIX}${y}`);
+  row.classList.add(ROWCLASS);
+  for (let x = 1; x <= 8; x++) {
+    const td = document.createElement('td');
+    td.setAttribute("id", `${SQUAREIDPREFIX}${x}y${y}`);
+    td.classList.add(SQUARECLASS);
+  }
+}
+// Remove placeholeder image
+const tablePlaceholder = document.getElementById(PLACEHOLDERID);
+tablePlaceholder.remove();
+// Remove play button
+const playButton = document.getElementById(PLAYBUTTONID);
+playButton.remove();
+// Add restart button
+const restartButton = document.createElement('button');
+restartButton.setAttribute("id", RESTARTBUTTONID);
+restartButton.classList.add(RESTARTBUTTONCLASS);
+// TODO
+// Insert table and button
+const tableParent = document.getElementById(TABLEPARENTID);
+tableParent.appendChild(table);
+tableParent.appendChild(restartButton);
