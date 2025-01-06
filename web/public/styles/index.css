@@ -354,12 +354,105 @@ a:visited {
     max-width: 387px;
 }
 
-#chess {
+/* CHESS START (change #chess-table to .chess-table)*/
+#chess-placeholder, .chess-table {
     min-width: 256px;
     min-height: 256px;
     max-height: 562px;
     max-width: 564px;
 }
+
+.chess-button {
+    height: 25px;
+}
+
+.chess-square {
+    border: 1px solid #090909;
+    height: 32px;
+    width: 32px;
+}
+
+.chess-square-black {
+    background-color: rgb(194, 157, 104);
+}
+
+.chess-square-white {
+    background-color: rgb(221, 201, 171);
+}
+
+.chess-square-selected {
+    background-color: yellow;
+}
+
+.chess-square-possible {
+    background-color: white;
+}
+
+/* WHITE PIECES START */
+.chess-white-king {
+    background-image: url(../images/chess_pieces.gif);
+    background-position: 0 0;
+}
+
+.chess-white-queen {
+    background-image: url(../images/chess_pieces.gif);
+    background-position: -32px 0;
+}
+
+.chess-white-rook {
+    background-image: url(../images/chess_pieces.gif);
+    background-position: -64px 0;
+}
+
+.chess-white-bishop {
+    background-image: url(../images/chess_pieces.gif);
+    background-position: 0 -32px;
+}
+
+.chess-white-knight {
+    background-image: url(../images/chess_pieces.gif);
+    background-position: -32px -32px;
+}
+
+.chess-white-pawn {
+    background-image: url(../images/chess_pieces.gif);
+    background-position: -64px -32px;
+}
+/* WHITE PIECES END */
+
+/* BLACK PIECES START */
+.chess-black-king {
+    background-image: url(../images/chess_pieces.gif);
+    background-position: 0 -64px;
+}
+
+.chess-black-queen {
+    background-image: url(../images/chess_pieces.gif);
+    background-position: -32px -64px;
+}
+
+.chess-black-rook {
+    background-image: url(../images/chess_pieces.gif);
+    background-position: -64px -64px;
+}
+
+.chess-black-bishop {
+    background-image: url(../images/chess_pieces.gif);
+    background-position: 0 -96px;
+}
+
+.chess-black-knight {
+    background-image: url(../images/chess_pieces.gif);
+    background-position: -32px -96px;
+}
+
+.chess-black-pawn {
+    background-image: url(../images/chess_pieces.gif);
+    background-position: -64px -96px;
+}
+/* BLACK PIECES END */
+
+/* CHESS END */
 
 #presentation-section {
     background-color: rosybrown;

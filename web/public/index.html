@@ -28,15 +28,19 @@
     <script type="module" src="scripts/index.js"></script>
 </head>
 <body id="body">
-    <!-- Header -->
+    <!-- HEADER -->
     <header id="body-header" class="header">
-        <!-- Top -->
+        <!-- TOP -->
         <div id="header-top" class="header-div">
+            <!-- LEFT -->
             <div>
                 <h1 id="header-name" class="atomic-age unselectable" unselectable="on">
                     Matias Davezac
                 </h1>
             </div>
+            <!-- LEFT END -->
+            <!-- RIGHT -->
+            <div>
                 <nav id="header-top-nav" class="header-nav">
                     <ul>
                         <li><a href="#">Home</a></li>
@@ -46,8 +50,10 @@
                     </ul>
                 </nav>
             </div>
+            <!-- RIGHT END -->
         </div>
-        <!-- Bottom -->
+        <!-- TOP END -->
+        <!-- BOTTOM -->
         <div id="header-bottom" class="header-div">
             <nav id="header-bottom-nav" class="header-nav">
                 <ul>
@@ -57,10 +63,12 @@
                 </ul>
             </nav>
         </div>
+        <!-- BOTTOM END -->
     </header>
-    <!-- Main -->
+    <!-- HEADER END -->
+    <!-- MAIN -->
     <main id="body-main" class="main">
-        <!-- Presentation -->
+        <!-- PRESENTATION -->
         <section id="presentation-section" class="main-section">
             <div>
                 <img id="carrot" alt="Carrot logo" class="unselectable" src="images/carrot.webp" />
@@ -70,60 +78,72 @@
                 <p id="presentation-desc" class="section-desc">Backend Developer</p>
             </div>
         </section>
-        <!-- Chess -->
+        <!-- PRESENTATION END -->
+        <!-- CHESS -->
         <section id="chess-section" class="main-section inverted-row">
-            <div>
-                <img id="chess" alt="Chess board" src="images/chess_board.webp"/>
+            <div id="chess-table-parent">
+                <img id="chess-placeholder" alt="Chess board" src="images/chess_board.webp"/>
+                <button id="chess-start" class="chess-button">Play</button>
             </div>
             <div>
                 <h1 id="chess-name" class="section-desc">CHESS</h1>
-                <p id="chess-desc" class="section-desc">Game...</p>
+                <p id="chess-desc" class="section-desc">Example game</p>
             </div>
         </section>
+        <!-- CHESS END -->
     </main>
-    <!-- Footer -->
+    <!-- MAIN END -->
+    <!-- FOOTER -->
     <footer id="body-footer" class="footer">
-        <!-- Info -->
+        <!-- INFO -->
         <div id="contact-info" class="body-footer-div">
-            <!-- Location -->
+            <!-- LOCATION -->
             <div id="location-div" class="contact-div">
                 <a href="https://www.google.com/maps/place/Uruguay/" target="_blank">
                     <div id="location-icon" class="contact-icon"></div>
                     <p>Location: Uruguay</p>
                 </a>
             </div>
-            <!-- Phone -->
+            <!-- LOCATION END -->
+            <!-- PHONE -->
             <div id="phone-div" class="contact-div">
                 <a href="tel: +59896480140">
                     <div id="phone-icon" class="contact-icon"></div>
                     <p>Phone number: +598 96 480 140</p>
                 </a>
             </div>
-            <!-- Email -->
+            <!-- PHONE END -->
+            <!-- EMAIL -->
             <div id="email-div" class="contact-div">
                 <a href="mailto: matiasdavezac@gmail.com">
                     <div id="email-icon" class="contact-icon"></div>
                     <p>email: matiasdavezac@gmail.com</p>
                 </a>
             </div>
+            <!-- EMAIL END -->
         </div>
-        <!-- Websites -->
+        <!-- INFO END -->
+        <!-- WEBSITES -->
         <div id="contact-links" class="body-footer-div">
-            <!-- Github -->
+            <!-- GITHUB -->
             <div id="github-div" class="contact-div">
                 <a href="https://github.com/ILoveChairs" target="_blank">
                     <div id="github-logo" class="contact-icon"></div>
                     <p>github</p>
                 </a>
             </div>
-            <!-- Linkedin -->
+            <!-- GITHUB END -->
+            <!-- LINKEDIN -->
             <div id="linkedin-div" class="contact-div">
                 <a href="https://linkedin.com/in/matiasdavezac" target="_blank">
                     <div id="linkedin-logo" class="contact-icon"></div>
                     <p>linkedin</p>
                 </a>
             </div>
+            <!-- LINKEDIN END-->
         </div>
+        <!-- WEBSITES END -->
     </footer>
+    <!-- FOOTER END -->
 </body>
 </html>
