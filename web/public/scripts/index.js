@@ -14,12 +14,10 @@ addEventListener("load", headerSpaceHandler);
 addEventListener("resize", headerSpaceHandler);
 
 function chessImport() {
-  console.log("Importing...")
   try {
     import("./chess.js");
-    console.log("Import successful!");
   } catch (error) {
-    console.log(`Import error: ${error}`);
+    console.log(`Unknown import error: ${error}`);
   }
 }
 function chessListenerLoader() {

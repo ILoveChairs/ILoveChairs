@@ -148,7 +148,7 @@ class Board {
   }
 
   applyMove(move) {
-    destContent = this.getSquareContent(move.destSquare);
+    const destContent = this.getSquareContent(move.destSquare);
     // If move is going to eat a piece, remove that eaten piece
     const newPieces = [];
     if (destContent != null) {
@@ -268,7 +268,7 @@ function lineAndDiagonalMoveAdder(moves, board, piece, xAxis, yAxis) {
     xAdder = -1;
   } else {
     xInit = 0;
-    xLimit = piece.x + 1;
+    xLimit = piece.square.x + 1;
     xAdder = 1;
   }
   if (yAxis > 0) {
@@ -281,12 +281,12 @@ function lineAndDiagonalMoveAdder(moves, board, piece, xAxis, yAxis) {
     yAdder = -1;
   } else {
     yInit = 0;
-    yLimit = piece.y + 1;
+    yLimit = piece.square.y + 1;
     yAdder = 1;
   }
-  for (let x = xInit; x != xLimit; x + xAdder){
-    for (let y = yInit; y != yLimit; y + yAdder) {
-      const destSquare = new Square(piece.x, y);
+  for (let x = piece.square.x + xInit; x != xLimit; x += xAdder){
+    for (let y = piece.square.y + yInit; y != yLimit; y += yAdder) {
+      const destSquare = new Square(x, y);
       const destSquareContent = board.getSquareContent(destSquare);
       if (destSquareContent == null) {
         moves.push(new Move(piece, destSquare));
@@ -469,21 +469,23 @@ class Pawn extends Piece {
       }
     }
     // Diagonals
-    function diag(xMod) {
-      const square = Square(this.square.x + xMod, this.square.y + adder);
-      if (board.isSquareInside(square)) {
-        const squareContent = board.getSquareContent(square);
-        if (squareContent !== null && squareContent.color !== this.color) {
-          moves.push(new Move(this, square));
-        }
+    const square1 = new Square(this.square.x - 1, this.square.y + adder);
+    if (board.isSquareInside(square1)) {
+      const squareContent = board.getSquareContent(square1);
+      if (squareContent !== null && squareContent.color !== this.color) {
+        moves.push(new Move(this, square1));
       }
     }
-    diag(-1);
-    diag(1);
+    const square2 = new Square(this.square.x + 1, this.square.y + adder);
+    if (board.isSquareInside(square2)) {
+      const squareContent = board.getSquareContent(square2);
+      if (squareContent !== null && squareContent.color !== this.color) {
+        moves.push(new Move(this, square2));
+      }
+    }
     return moves;
   }
 }
-
 
 // *  --- Chess Controller / Model Facade ---
 
@@ -492,6 +494,7 @@ class ChessController {
     this.color = color;
     this.kingMoved = false;
     this.towersThatMoved = [];
+    this.clickedPiece = null;
     if (board === null) {
       this.board = new Board([
         // White
@@ -553,6 +556,80 @@ class ChessController {
   }
 }
 
+// * --- Translator class ---
+
+class BoardTranslator {
+  static toAPI(board) {
+    const formattedBoard = [];
+    for (let y = 1; y <= 8; y++) {
+      formattedBoard.push([]);
+      for (let x = 1; x <= 8; x++) {
+        const squareContent = board.getSquareContent(new Square(x, y));
+        if (squareContent === null) {
+          formattedBoard[y - 1].push(" ");
+        } else {
+          formattedBoard[y - 1].push(squareContent.repr);
+        }
+      }
+    }
+    return formattedBoard;
+  }
+
+  static toBoard(responseBoard) {
+    console.log(responseBoard);
+    const listOfPieces = [];
+    for (let x = 0; x < 8; x++) {
+      for (let y = 0; y < 8; y++) {
+        const repr = responseBoard[x][y];
+        if (repr !== " ") {
+          let piece = null;
+          switch (repr) {
+            case "K":
+              piece = new King(new Square(x + 1, y + 1), colors.white);
+              break;
+            case "k":
+              piece = new King(new Square(x + 1, y + 1), colors.black);
+              break;
+            case "Q":
+              piece = new Queen(new Square(x + 1, y + 1), colors.white);
+              break;
+            case "q":
+              piece = new Queen(new Square(x + 1, y + 1), colors.black);
+              break;
+            case "R":
+              piece = new Rook(new Square(x + 1, y + 1), colors.white);
+              break;
+            case "r":
+              piece = new Rook(new Square(x + 1, y + 1), colors.black);
+              break;
+            case "B":
+              piece = new Bishop(new Square(x + 1, y + 1), colors.white);
+              break;
+            case "b":
+              piece = new Bishop(new Square(x + 1, y + 1), colors.black);
+              break;
+            case "N":
+              piece = new Knight(new Square(x + 1, y + 1), colors.white);
+              break;
+            case "n":
+              piece = new Knight(new Square(x + 1, y + 1), colors.black);
+              break;
+            case "P":
+              piece = new Pawn(new Square(x + 1, y + 1), colors.white);
+              break;
+            case "p":
+              piece = new Pawn(new Square(x + 1, y + 1), colors.black);
+              break;
+            default:
+              throw new Error("Board translation error");
+          }
+          listOfPieces.push(piece);
+        }
+      }
+    }
+    return new Board(listOfPieces);
+  }
+}
 
 // * --- API calling class ---
 
@@ -567,23 +644,21 @@ class ChessAPI {
       const response = await fetch(CHESSAPIURL, {
         method: "POST",
         body: JSON.stringify({
-          color,
-          board
+          "color": color === colors.white ? "black" : "white",
+          "board": BoardTranslator.toAPI(board)
         })
       });
-      if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
-      }
       const json = await response.json();
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}, error: ${json["error"]}`);
+      }
       const responseBoard = json["board"];
-      return {result: "success", responseBoard};
+      return responseBoard;
     } catch (error) {
       console.error(error.message);
-      return {result: "error"};
     }
   }
 }
-
 
 // *  --- Html table renderer ---
 
@@ -626,6 +701,24 @@ class ChessGameRenderer {
     }
   }
 
+  static renderReset() {
+    for (let y = 1; y <= 8; y++) {
+      for (let x = 1; x <= 8; x++) {
+        const cell = getTableCell(new Square(x, y));
+        cell.classList.remove(
+          WHITEKINGCLASS, BLACKKINGCLASS,
+          WHITEQUEENCLASS, BLACKQUEENCLASS,
+          WHITEROOKCLASS, BLACKROOKCLASS,
+          WHITEBISHOPCLASS, BLACKBISHOPCLASS,
+          WHITEKNIGHTCLASS, BLACKKNIGHTCLASS,
+          WHITEPAWNCLASS, BLACKPAWNCLASS,
+          SELECTEDPIECECLASS,
+          POSSIBLESQUARECLASS
+        );
+      }
+    }
+  }
+
   static render(board, clickedSquare = null) {
     const table = document.getElementById(TABLEID);
     let selectedPiece = null;
@@ -638,6 +731,7 @@ class ChessGameRenderer {
       selectedSquare = selectedPiece.square;
       possibleMoveList = selectedPiece.getMoves(board);
     }
+    ChessGameRenderer.renderReset();
     for (let y = 1; y <= 8; y++) {
       for (let x = 1; x <= 8; x++) {
         ChessGameRenderer.renderSquare(
@@ -664,18 +758,108 @@ class ChessGame {
     if (this.controller !== null) {
       this.color = getOppositeColor(this.controller.color);
     }
-    this.controller = new ChessController(color);
     if (color === colors.black) {
-      await this.api.getMoveFromCPU(controller.board);
+      const responseBoard = await this.api.getMoveFromCPU(controller.board);
+      const board = BoardTranslator.toBoard(responseBoard);
+      this.controller = new ChessController(color, board);
+    } else {
+      this.controller = new ChessController(color);
     }
     ChessGameRenderer.render(this.controller.board);
   }
 }
 
+// * --- Event handling ---
+
+function getTableCell(square) {
+  return document.getElementById(
+    `${SQUAREIDPREFIX}x${square.x}y${square.y}`
+  );
+}
+
+function addClickedState(chessGame, piece) {
+  chessGame.controller.clickedPiece = piece;
+  getTableCell(piece.square)
+    .classList.add(SELECTEDPIECECLASS);
+}
+
+function removeClickedState(chessGame) {
+  const clickedPiece = chessGame.controller.clickedPiece;
+  if (clickedPiece !== null) {
+    getTableCell(clickedPiece.square)
+      .classList.remove(SELECTEDPIECECLASS);
+    chessGame.controller.clickedPiece = null;
+  }
+}
+
+function addPossibleMovesClass(chessGame) {
+  const clickedPiece = chessGame.controller.clickedPiece;
+  const possibleMoves = clickedPiece.getMoves(chessGame.controller.board);
+  console.log(possibleMoves);
+  for (const move of possibleMoves) {
+    getTableCell(move.destSquare)
+      .classList.add(POSSIBLESQUARECLASS);
+  }
+}
+
+function removePossibleMovesClass() {
+  for (let y = 1; y <= 8; y++) {
+    for (let x = 1; x <= 8; x++) {
+      getTableCell(new Square(x, y))
+        .classList.remove(POSSIBLESQUARECLASS);
+    }
+  }
+}
+
+function resetTable(chessGame) {
+  removePossibleMovesClass()
+  removeClickedState(chessGame);
+}
+
+function selectPieceClick(chessGame, piece) {
+  resetTable(chessGame)
+  addClickedState(chessGame, piece);
+  addPossibleMovesClass(chessGame);
+}
+
+async function makeMoveClick(chessGame, square) {
+  const move = new Move(chessGame.controller.clickedPiece, square)
+  const responseBoard = await chessGame.api.sendMove(
+    move,
+    chessGame.controller.board,
+    chessGame.controller.color
+  );
+  const board = BoardTranslator.toBoard(responseBoard);
+  chessGame.controller.board = board;
+  resetTable(chessGame);
+  ChessGameRenderer.render(board);
+}
+
+function noSelectionClick(chessGame) {
+  resetTable(chessGame)
+}
+
+async function squareClickEvent(chessGame, square = null) {
+  if (square === null) {
+    noSelectionClick(chessGame);
+    return;
+  }
+  const squareContent = chessGame.controller.board.getSquareContent(square);
+  if (getTableCell(square).classList.contains(POSSIBLESQUARECLASS)) {
+    await makeMoveClick(chessGame, square);
+  } else if (squareContent === null) {
+      noSelectionClick(chessGame);
+  } else {
+    if (squareContent.color === chessGame.controller.color) {
+      selectPieceClick(chessGame, squareContent);
+    } else {
+      noSelectionClick(chessGame);
+    }
+  }
+}
+
 // * --- Table ---
-
 /// js file only called when pressed the play button.
-
 
 // Create chess objects
 const chessGame = new ChessGame();
@@ -697,6 +881,9 @@ for (let y = 1; y <= 8; y++) {
     } else {
       td.classList.add(BLACKSQUARECLASS);
     }
+    td.addEventListener('click', async function () {
+      await squareClickEvent(chessGame, new Square(x, y));
+    });
     row.appendChild(td);
   }
 }

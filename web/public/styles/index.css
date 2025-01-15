@@ -1,9 +1,3 @@
-
-/*
-    The css file will remain to store all changes,
-    however the css will be converted to critical css.
-*/
-
 /* VARIABLES START */
 :root {
     --color-primary: #d73953;
@@ -307,7 +301,6 @@ a:visited {
 #github-logo {
     background: url(../images/page_sprites.gif) -32px -32px;
 }
-
 /* HEADER AND FOOTER END */
 
 /* INDEX START */
@@ -354,12 +347,12 @@ a:visited {
     max-width: 387px;
 }
 
-/* CHESS START (change #chess-table to .chess-table)*/
+/* CHESS START */
 #chess-placeholder, .chess-table {
-    min-width: 256px;
-    min-height: 256px;
-    max-height: 562px;
-    max-width: 564px;
+    min-width: 263px;
+    min-height: 263px;
+    max-height: 263px;
+    max-width: 263px;
 }
 
 .chess-button {
@@ -378,6 +371,10 @@ a:visited {
 
 .chess-square-white {
     background-color: rgb(221, 201, 171);
+}
+
+.chess-square:hover {
+    background-color: rgb(213, 208, 201);
 }
 
 .chess-square-selected {
@@ -453,10 +450,8 @@ a:visited {
 /* BLACK PIECES END */
 
 /* CHESS END */
-
 #presentation-section {
     background-color: rosybrown;
     padding: 0vh 0 20vh 0;
 }
-
 /* INDEX END */
