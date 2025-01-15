@@ -252,12 +252,12 @@ function knightKingMoveAdder(moves, board, piece, possibleSquares) {
 // If the axis arg is negative it will go up to the negative border.
 // If the axis arg is zero it will only repeat once in the for (for rook).
 function lineAndDiagonalMoveAdder(moves, board, piece, xAxis, yAxis) {
-  var xInit;
-  var xLimit;
-  var xAdder
-  var yInit;
-  var yLimit;
-  var yAdder;
+  let xInit;
+  let xLimit;
+  let xAdder;
+  let yInit;
+  let yLimit;
+  let yAdder;
   if (xAxis > 0) {
     xInit = 1;
     xLimit = 9;
@@ -268,8 +268,8 @@ function lineAndDiagonalMoveAdder(moves, board, piece, xAxis, yAxis) {
     xAdder = -1;
   } else {
     xInit = 0;
-    xLimit = piece.square.x + 1;
-    xAdder = 1;
+    xLimit = 0;
+    xAdder = 0;
   }
   if (yAxis > 0) {
     yInit = 1;
@@ -281,22 +281,24 @@ function lineAndDiagonalMoveAdder(moves, board, piece, xAxis, yAxis) {
     yAdder = -1;
   } else {
     yInit = 0;
-    yLimit = piece.square.y + 1;
-    yAdder = 1;
+    yLimit = 0;
+    yAdder = 0;
   }
-  for (let x = piece.square.x + xInit; x != xLimit; x += xAdder){
-    for (let y = piece.square.y + yInit; y != yLimit; y += yAdder) {
-      const destSquare = new Square(x, y);
-      const destSquareContent = board.getSquareContent(destSquare);
-      if (destSquareContent == null) {
-        moves.push(new Move(piece, destSquare));
-      } else if (destSquareContent.color != piece.color) {
-        moves.push(new Move(piece, destSquare));
-        break;
-      } else {
-        break;
-      }
+  let x = piece.square.x + xInit;
+  let y = piece.square.y + yInit;
+  while (x !== xLimit && y !== yLimit) {
+    const destSquare = new Square(x, y);
+    const destSquareContent = board.getSquareContent(destSquare);
+    if (destSquareContent == null) {
+      moves.push(new Move(piece, destSquare));
+    } else if (destSquareContent.color != piece.color) {
+      moves.push(new Move(piece, destSquare));
+      break;
+    } else {
+      break;
     }
+    x += xAdder;
+    y += yAdder;
   }
 }
 
@@ -319,7 +321,7 @@ function bishopMoveAdder(moves, board, piece) {
   // down-left
   lineAndDiagonalMoveAdder(moves, board, piece, -1, -1);
   // down-right
-  lineAndDiagonalMoveAdder(moves, board, piece, -1, 1);
+  lineAndDiagonalMoveAdder(moves, board, piece, 1, -1);
 }
 
 // *  --- Pieces ---
@@ -456,12 +458,12 @@ class Pawn extends Piece {
         const f2 = new Square(f1.x, f1.y + adder);
         if (
           board.isSquareInside(f2) &&
-          ((this.color === colors.white && this.square.y == 2) ||
-          (this.color === colors.black && this.square.y == 7))
+          ((this.color === colors.white && this.square.y === 2) ||
+          (this.color === colors.black && this.square.y === 7))
         ) {
           const f2Content = board.getSquareContent(f2);
           if (f2Content === null || f2Content.color !== this.color) {
-            moves.push(new Move(this, f1));
+            moves.push(new Move(this, f2));
           }
         }
       } else if (f1Content.color !== this.color) {
@@ -576,11 +578,10 @@ class BoardTranslator {
   }
 
   static toBoard(responseBoard) {
-    console.log(responseBoard);
     const listOfPieces = [];
-    for (let x = 0; x < 8; x++) {
-      for (let y = 0; y < 8; y++) {
-        const repr = responseBoard[x][y];
+    for (let y = 0; y < 8; y++) {
+      for (let x = 0; x < 8; x++) {
+        const repr = responseBoard[y][x];
         if (repr !== " ") {
           let piece = null;
           switch (repr) {
@@ -648,14 +649,18 @@ class ChessAPI {
           "board": BoardTranslator.toAPI(board)
         })
       });
-      const json = await response.json();
-      if (!response.ok) {
+      if (response.status === 501) {
+        return {"status": "finished"};
+      } else if (response.status !== 200) {
         throw new Error(`Response status: ${response.status}, error: ${json["error"]}`);
       }
+      const json = await response.json();
       const responseBoard = json["board"];
-      return responseBoard;
+      return {"status": "playing", "board": responseBoard};
     } catch (error) {
       console.error(error.message);
+      alert("Something went wrong");
+      return {"status": "error"};
     }
   }
 }
@@ -720,7 +725,6 @@ class ChessGameRenderer {
   }
 
   static render(board, clickedSquare = null) {
-    const table = document.getElementById(TABLEID);
     let selectedPiece = null;
     if (clickedSquare !== null) {
       selectedPiece = board.getSquareContent(clickedSquare);
@@ -759,7 +763,11 @@ class ChessGame {
       this.color = getOppositeColor(this.controller.color);
     }
     if (color === colors.black) {
-      const responseBoard = await this.api.getMoveFromCPU(controller.board);
+      const response = await this.api.getMoveFromCPU(controller.board);
+      if (response["status"] === "error") {
+        return;
+      }
+      const responseBoard = response["board"];
       const board = BoardTranslator.toBoard(responseBoard);
       this.controller = new ChessController(color, board);
     } else {
@@ -795,7 +803,6 @@ function removeClickedState(chessGame) {
 function addPossibleMovesClass(chessGame) {
   const clickedPiece = chessGame.controller.clickedPiece;
   const possibleMoves = clickedPiece.getMoves(chessGame.controller.board);
-  console.log(possibleMoves);
   for (const move of possibleMoves) {
     getTableCell(move.destSquare)
       .classList.add(POSSIBLESQUARECLASS);
@@ -824,11 +831,15 @@ function selectPieceClick(chessGame, piece) {
 
 async function makeMoveClick(chessGame, square) {
   const move = new Move(chessGame.controller.clickedPiece, square)
-  const responseBoard = await chessGame.api.sendMove(
+  const response = await chessGame.api.sendMove(
     move,
     chessGame.controller.board,
     chessGame.controller.color
   );
+  if (response["status"] === "error") {
+    return;
+  }
+  const responseBoard = response["board"];
   const board = BoardTranslator.toBoard(responseBoard);
   chessGame.controller.board = board;
   resetTable(chessGame);
@@ -867,7 +878,7 @@ const chessGame = new ChessGame();
 const table = document.createElement('table');
 table.setAttribute("id", TABLEID);
 table.classList.add(TABLECLASS);
-for (let y = 1; y <= 8; y++) {
+for (let y = 8; y >= 1; y--) {
   const row = document.createElement('tr');
   row.setAttribute("id", `${ROWIDPREFIX}${y}`);
   row.classList.add(ROWCLASS);
