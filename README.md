@@ -1,8 +1,8 @@
-<h1 align="center">Greetings!</h1>
+<h1 align="center">Greetings.</h1>
 
 ![Carrot](./only_carrot.png)
 
-## ❓ _Who am i?_
+## ❓ _Who am I?_
 I'm a backend developer wannabe that likes chairs and carrots.
 
 -   Holberton alumni
@@ -10,25 +10,18 @@ I'm a backend developer wannabe that likes chairs and carrots.
 -   Likes carrots
 -   Nerd
 
-## 🔧 Current stack
-I know a bunch of technologies, but i want to showcase my current favourites.
+## 💻 What am I doing now?
+A lot of stuff.
 
+-  CS degree and boring math.
+-  A compiler with LLVM to replace Free Pascal, for me at least (I hate Pascal).
+-  Random API projects to test libraries in different languages.
+-  Mobile Apps for personal use.
+-  A lot of command line applications that make me feel useful and not dread the future of my career.
+-  Hacking my alarm so it doesn't turn off.
+-  Crying.
+-  Looking into gpu app development with cuda.
+-  Looking into 3d graphics (Masochism).
 
-### 🐸 Dart Frog (Dart)
-Even if I learned this framework as a stopgap solution, I ended up loving it.
-It's a very developer-friendly Restful API framework for dart,
-being able to start a project with `create` and add routes with `add route`.
-For more complex problems, it is also very comfortable,
-letting you define your middleware, pre-server-run code and post-server-run code.
-The documentation is really, really good as well.
-
-### 🍶 Flask (Python)
-Flask is, let's say minimalist.
-It is a Restful API framework, but it's main characteristic is that it is highly unopinionated.
-Other than helping you expose endpoints and running a server,
-other features must be imported and implemented.
-
-This makes it a very modular language, where you use only what you need.
-It is very good for small applications where you don't need ORMs or auth or
-other features and patterns that are forced upon you on other frameworks.
-However it may increase the development time as everything haves to be done manually.
+## 📱 How to contact me?
+You don't.
