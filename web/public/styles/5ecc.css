@@ -1,0 +1,548 @@
+/* VARIABLES START */
+:root {
+    --color-primary: #d73953;
+
+    --color-black: #090909;
+    --color-white: #ffffff;
+    --color-light-grey: #f3f3f3;
+    --color-dark-grey: #353535;
+
+    --text-color: var(--color-black);
+    --color-header: #f7fad2;
+    --color-main: #ffffff;
+    --color-footer: #929292;
+
+    --footer-height: 100vh;
+
+    --font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-family-title: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-size-small: 1.2rem;
+    --font-size-medium: 1.6rem;
+    --font-size-large: 1.8rem;
+    --font-size-x-large: 2.3rem;
+    --font-size-xx-large: 4.8rem;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+
+    --transition-duration: .3s;
+    --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+/* VARIABLES END */
+
+/* RESET START */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* RESET END */
+
+/* GENERIC START */
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+
+    color: var(--text-color);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-base);
+
+    display: flex;
+    flex-direction: column;
+    flex-flow: column;
+    align-content: center;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+h1, h2, h3, h4, h5, h6, label {
+    font-family: var(--font-family-title);
+    font-weight: var(--font-weight-bold);
+}
+
+a:link {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:visited {
+    font-style: italic;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: var(--text-color);
+}
+
+.atomic-age {
+    font-family: 'Atomic Age';
+    font-weight: 400;
+    font-style: normal;
+}
+
+.unselectable {
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+/* GENERIC END */
+
+/* HEADER START */
+#body-header {
+    top: 0;
+    width: 100%;
+    position: fixed;
+}
+
+#body-header > * {
+    min-height: 1rem;
+    width: 100%;
+}
+
+.header-div {
+    background-color: var(--color-header);
+    padding: 0 5vw;
+}
+
+#header-nav li a {
+    display: block;
+    padding: 10px;
+}
+
+#header {
+    width: 100%;
+    padding: 0;
+
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#header-name-div {
+    padding-left: 2.5vw;
+}
+
+#header-dropdown-div {
+    padding-right: 0;
+}
+
+#header-dropdown-btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 2vh 2.5vw;
+    font-size: 16px;
+    border: none;
+    margin: 0;
+    width: 15em;
+}
+
+#header-dropdown-content {
+    display: none;
+    position: absolute;
+    margin-top: 0;
+    background-color: #f1f1f1;
+    min-width: 2.5vw;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 15em;
+}
+
+#header-dropdown-content a {
+    color: black;
+    padding: 12px 2.5vw;
+    text-decoration: none;
+    display: block;
+}
+
+#header-dropdown-content a:hover {background-color: #ddd;}
+#header-dropdown:hover #header-dropdown-content {display: block;}
+#header-dropdown:hover #header-dropdown-btn {background-color: #3e8e41;}
+
+#header ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#header-name {
+    font-size: large;
+    padding: 0;
+}
+
+
+#header-nav {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+#header-nav ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+
+#header-nav li a {
+    padding: 2vh 3vw;
+}
+
+#header-nav a:hover {
+    color: white;
+    background-color: red;
+    text-decoration: none;
+}
+/* HEADER END*/
+
+/* * DND START*/
+/* GENERIC CLASSES START*/
+.dnd-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: start;
+}
+.dnd-div-row, .dnd-div-column, .dnd-div-wrapper-row, .dnd-div-wrapper-column {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+}
+.dnd-div-row {
+    flex-direction: row;
+}
+.dnd-div-column {
+    flex-direction: column;
+    align-items: flex-start;
+}
+.dnd-div-wrapper-row {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.dnd-div-wrapper-column {
+    flex-direction: column;
+    width: 98%;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0 0.5%;
+}
+.dnd-h1, .dnd-h2, .dnd-h3, .dnd-h4 {
+    margin: 5px;
+}
+.dnd-h1 {
+    font-size: larger;
+}
+.dnd-h2 {
+    font-size: large;
+}
+.dnd-h3 {
+    font-size: medium;
+}
+.dnd-h4 {
+    font-size: small;
+}
+.dnd-p {
+    margin: 5px;
+}
+.dnd-label {
+    margin: 5px;
+}
+.dnd-input {
+    margin: 5px;
+}
+.dnd-textarea {
+    height: 100px;
+    width: 100%;
+    resize: none;
+    padding: 0.5%;
+}
+.dnd-button {
+    margin: 5px;
+}
+.dnd-table {
+    margin-left: 5px;
+    width: max(98vw, 40em);
+    border: black solid 1px;
+    padding: 2px;
+}
+.dnd-th {
+    width: 10%;
+    border: black solid 1px;
+    padding: 1px;
+    font-weight: bold;
+}
+.dnd-table tr td{
+    border: black solid 1px;
+    padding: 2px;
+}
+/* GENERIC CLASSES END*/
+
+/* FUNDAMENTALS START*/
+#dnd-fundamentals-level {
+    width: 2.5em;
+}
+.dnd-fundamentals {
+    width: max(20em, 30vw);
+}
+.dnd-fundamentals-div {
+    justify-content: left;
+    width: 100%;
+}
+.dnd-fundamentals-h3 {
+    width: 5em;
+    margin-left: 0;
+}
+.dnd-fundamentals-dropdown {
+    border: black solid 1px;
+    width: 10em;
+    margin-left: 2em;
+}
+.dnd-fundamentals-selectables {
+    border: black solid 1px;
+    width: 100%;
+    margin-top: 1em;
+}
+.dnd-dropdown-button {
+    width: 100%;
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-medium);
+    background-color: rgb(255, 255, 255);
+    border: black solid 1px;
+    border-radius: 0;
+    padding: 2px 0;
+    box-sizing: border-box;
+}
+.dnd-dropdown-button:hover {
+    background-color: rgb(210, 210, 210);
+}
+.dnd-dropdown-button:active {
+    background-color: rgb(159, 159, 159);
+}
+.dnd-dropdown-div {
+    width: 10em;
+    margin-left: 1em;
+}
+.dnd-dropdown-content-div {
+    width: 10em;
+    padding: 0px;
+    margin: 0;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+}
+.dnd-dropdown-content {
+    width: 10em;
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-medium);
+    background-color: rgb(255, 255, 255);
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0;
+    padding: 2px 0 2px 2%;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1;
+}
+.dnd-dropdown-show-action {
+    display: flex;
+}
+/* FUNDAMENTALS END*/
+
+/* ABILITIES START*/
+.dnd-abilities-score {
+    width: 1.5em;
+    padding: 2px;
+    margin-right: 0;
+    border: #090909 solid 1px;
+}
+.dnd-abilities-modifier {
+    width: 2.5em;
+    padding: 2px;
+    margin-left: 0;
+    border: #090909 solid 1px;
+    border-left: none;
+}
+/* ABILITIES END*/
+
+/* SKILLS START*/
+.dnd-skills-score {
+    width: 1.5em;
+    padding: 2px;
+    margin-right: 0;
+    border: #090909 solid 1px;
+}
+.dnd-skills-modifier {
+    width: 2.5em;
+    padding: 2px;
+    margin-left: 0;
+    border: #090909 solid 1px;
+    border-left: none;
+}
+/* SKILLS END*/
+
+/* SPELLS START*/
+#dnd-spells-name {
+    width: 20%;
+}
+#dnd-spells-description {
+    width: 30%;
+}
+/* SPELLS END*/
+
+/* EQUIPMENT START*/
+#dnd-equipment-weapons-name {
+    width: 15%;
+}
+#dnd-equipment-weapons-description {
+    width: 25%;
+}
+#dnd-equipment-armor-name {
+    width: 15%;
+}
+#dnd-equipment-armor-description {
+    width: 25%;
+}
+#dnd-equipment-objects-name {
+    width: 15%;
+}
+#dnd-equipment-objects-description {
+    width: 25%;
+}
+/* EQUIPMENT END*/
+
+/* INFORMATION START*/
+/* INFORMATION END*/
+
+/* DETAILS START*/
+/* DETAILS END*/
+
+/* END START*/
+#dnd-save-button, #dnd-clear-button {
+    margin: 10px 20px;
+}
+/* END END*/
+
+/* OVERLAY START*/
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2000;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup10 {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 50%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup10 h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup10 .close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup10 .close:hover {
+  color: #06D85F;
+}
+.popup10 .content {
+  max-height: 30%;
+  overflow: auto;
+}
+/* OVERLAY END*/
+/* * DND END*/

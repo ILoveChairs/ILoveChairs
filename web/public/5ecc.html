@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <!-- Metadata -->
+    <title>5e Character Creator</title>
+    <meta name="description" content="Creates characters based on 5e 2024 phb and beyond." />
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name="robots" content="nofollow">
+    <meta name="googlebot" content="nofollow, notranslate">
+
+    <!-- SRC -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'; img-src *;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- CSS -->
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/5ecc.css'>
+
+    <!-- JSON -->
+
+
+    <!-- JS MODELLING -->
+    <script type="module" src="./scripts/5e/modelling/base.js"></script>
+    <script type="module" src="./scripts/5e/modelling/objects.js"></script>
+    <script type="module" src="./scripts/5e/modelling/armor.js"></script>
+    <script type="module" src="./scripts/5e/modelling/weapons.js"></script>
+    <script type="module" src="./scripts/5e/modelling/spells.js"></script>
+    <script type="module" src="./scripts/5e/modelling/changers.js"></script>
+    <script type="module" src="./scripts/5e/modelling/classes.js"></script>
+    <script type="module" src="./scripts/5e/modelling/character.js"></script>
+    <!-- JS VISUALS -->
+    <script type="module" src="./scripts/5e/visuals/ids.js"></script>
+    <script type="module" src="./scripts/5e/visuals/strings.js"></script>
+    <!-- JS LOADER -->
+    <script type="module" src="./scripts/5e/jsonLoader.js"></script>
+    <!-- JS MAIN -->
+    <script type="module" src="./scripts/5e/5ecc.js"></script>
+</head>
+<body id="body">
+    <!-- HEADER ˄˅˄˅˄˅˄˅ -->
+    <header id="body-header" class="header">
+        <div id="header" class="header-div">
+            <!-- LEFT -->
+            <div class="header-div" id="header-name-div">
+                <h1 id="header-name" class="atomic-age unselectable" unselectable="on">
+                    Matias Davezac
+                </h1>
+            </div>
+            <!-- LEFT END -->
+            <!-- CENTER -->
+            <nav class="header-div" id="header-nav">
+                <ul>
+                    <li><a class="unselectable" href="#" id="spanish-button">Spanish</a></li>
+                    <li><a class="unselectable" href="#" id="english-button">English</a></li>
+                </ul>
+            </nav>
+            <!-- CENTER END -->
+            <!-- RIGHT -->
+            <div class="header-div" id="header-dropdown-div">
+                <div id="header-dropdown">
+                    <button class="dnd-button" id="header-dropdown-btn">Other Pages ˅</button>
+                    <div id="header-dropdown-content">
+                        <a href="./">Home</a>
+                    </div>
+                </div>
+            </div>
+            <!-- RIGHT END -->
+        </div>
+    </header>
+    <!-- HEADER END -->
+    <!-- DND START -->
+    <main id="main">
+        <form id="dnd-form">
+            <h1 class ="unselectable dnd-h1" id="dnd-h1"></h1>
+            <!-- FUNDAMENTALS START -->
+            <section class="dnd-section" id="dnd-fundamentals">
+                <h2 class ="unselectable dnd-h2" id="dnd-fundamentals-h2"></h2>
+                <div class="dnd-div-row">
+                    <label class="dnd-label unselectable" id="dnd-fundamentals-level-label" for="dnd-fundamentals-level">Level</label>
+                    <input type="number" id="dnd-fundamentals-level" min="1" max="20" value="1" name="level">
+                </div>
+                <div class="dnd-div-wrapper-row">
+                    <div class="dnd-div-column dnd-fundamentals" id="dnd-fundamentals-class">
+                        <div class="dnd-div-row dnd-fundamentals-div">
+                            <h3 class ="unselectable dnd-h3 dnd-fundamentals-h3" id="dnd-fundamentals-class-h3"></h3>
+                            <div class="dnd-div-column dnd-dropdown-div" id="dnd-fundamentals-class-dropdown-div">
+                                <button class="dnd-dropdown-button unselectable" id="dnd-fundamentals-class-dropdown-button"></button>
+                                <div class="dnd-dropdown-content-div" id="dnd-fundamentals-class-dropdown-content-div">
+                                    <!-- Classes -->
+                                    <p class="dnd-dropdown-content unselectable">Lorem Ipsum</p>
+                                    <p class="dnd-dropdown-content unselectable">Lorem Ipsum</p>
+                                    <p class="dnd-dropdown-content unselectable">Lorem Ipsum</p>
+                                    <p class="dnd-dropdown-content unselectable">Lorem Ipsum</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dnd-div-column dnd-fundamentals-selectables">Lorem Ipsum</div>
+                    </div>
+                    <div class="dnd-div-column dnd-fundamentals" id="dnd-fundamentals-race">
+                        <div class="dnd-div-row dnd-fundamentals-div">
+                            <h3 class ="unselectable dnd-h3 dnd-fundamentals-h3" id="dnd-fundamentals-race-h3"></h3>
+                            <div class="dnd-div-column dnd-dropdown-div" id="dnd-fundamentals-race-dropdown-div">
+                                <button class="dnd-dropdown-button unselectable" id="dnd-fundamentals-race-dropdown-button"></button>
+                                <div class="dnd-dropdown-content-div" id="dnd-fundamentals-race-dropdown-content-div">
+                                    <!-- Races -->
+                                    <p class="dnd-dropdown-content unselectable">Lorem Ipsum</p>
+                                    <p class="dnd-dropdown-content unselectable">Lorem Ipsum</p>
+                                    <p class="dnd-dropdown-content unselectable">Lorem Ipsum</p>
+                                    <p class="dnd-dropdown-content unselectable">Lorem Ipsum</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dnd-div-column dnd-fundamentals-selectables">Lorem Ipsum</div>
+                    </div>
+                    <div class="dnd-div-column dnd-fundamentals" id="dnd-fundamentals-background">
+                        <div class="dnd-div-row dnd-fundamentals-div">
+                            <h3 class ="unselectable dnd-h3 dnd-fundamentals-h3" id="dnd-fundamentals-background-h3"></h3>
+                            <div class="dnd-div-column dnd-dropdown-div" id="dnd-fundamentals-background-dropdown-div">
+                                <button class="dnd-dropdown-button unselectable" id="dnd-fundamentals-background-dropdown-button"></button>
+                                <div class="dnd-dropdown-content-div" id="dnd-fundamentals-background-dropdown-content-div">
+                                    <!-- Backgrounds -->
+                                    <p class="dnd-dropdown-content unselectable">Lorem Ipsum</p>
+                                    <p class="dnd-dropdown-content unselectable">Lorem Ipsum</p>
+                                    <p class="dnd-dropdown-content unselectable">Lorem Ipsum</p>
+                                    <p class="dnd-dropdown-content unselectable">Lorem Ipsum</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dnd-div-column dnd-fundamentals-selectables">Lorem Ipsum</div>
+                    </div>
+                </div>
+            </section>
+            <hr/>
+            <!-- FUNDAMENTALS END -->
+            <!-- ABILITIES START -->
+            <section class="dnd-section" id="dnd-abilities">
+                <h2 class ="unselectable dnd-h2" id="dnd-abilities-h2"></h2>
+                <div class="dnd-div-wrapper-row">
+                    <div class="dnd-div-row" id="dnd-div-row dnd-abilities-str">
+                        <p class="dnd-p unselectable dnd-abilities-prof" id="dnd-abilities-str-prof"></p>
+                        <p class="dnd-p unselectable dnd-abilities-score" id="dnd-abilities-str-score">0</p>
+                        <p class="dnd-p unselectable dnd-abilities-modifier" id="dnd-abilities-str-modifier">+ 0</p>
+                        <h3 class ="unselectable dnd-h3" id="dnd-abilities-str-h3"></h3>
+                    </div>
+                    <div class="dnd-div-row" id="dnd-abilities-dex">
+                        <p class="dnd-p unselectable dnd-abilities-prof" id="dnd-abilities-dex-prof"></p>
+                        <p class="dnd-p unselectable dnd-abilities-score" id="dnd-abilities-dex-score">0</p>
+                        <p class="dnd-p unselectable dnd-abilities-modifier" id="dnd-abilities-dex-modifier">+ 0</p>
+                        <h3 class ="unselectable dnd-h3" id="dnd-abilities-dex-h3"></h3>
+                    </div>
+                    <div class="dnd-div-row" id="dnd-abilities-con">
+                        <p class="dnd-p unselectable dnd-abilities-prof" id="dnd-abilities-con-prof"></p>
+                        <p class="dnd-p unselectable dnd-abilities-score" id="dnd-abilities-con-score">0</p>
+                        <p class="dnd-p unselectable dnd-abilities-modifier" id="dnd-abilities-con-modifier">+ 0</p>
+                        <h3 class ="unselectable dnd-h3" id="dnd-abilities-con-h3"></h3>
+                    </div>
+                    <div class="dnd-div-row" id="dnd-abilities-int">
+                        <p class="dnd-p unselectable dnd-abilities-prof" id="dnd-abilities-int-prof"></p>
+                        <p class="dnd-p unselectable dnd-abilities-score" id="dnd-abilities-int-score">0</p>
+                        <p class="dnd-p unselectable dnd-abilities-modifier" id="dnd-abilities-int-modifier">+ 0</p>
+                        <h3 class ="unselectable dnd-h3" id="dnd-abilities-int-h3"></h3>
+                    </div>
+                    <div class="dnd-div-row" id="dnd-abilities-wis">
+                        <p class="dnd-p unselectable dnd-abilities-prof" id="dnd-abilities-wis-prof"></p>
+                        <p class="dnd-p unselectable dnd-abilities-score" id="dnd-abilities-wis-score">0</p>
+                        <p class="dnd-p unselectable dnd-abilities-modifier" id="dnd-abilities-wis-modifier">+ 0</p>
+                        <h3 class ="unselectable dnd-h3" id="dnd-abilities-wis-h3"></h3>
+                    </div>
+                    <div class="dnd-div-row" id="dnd-abilities-cha">
+                        <p class="dnd-p unselectable dnd-abilities-prof" id="dnd-abilities-cha-prof"></p>
+                        <p class="dnd-p unselectable dnd-abilities-score" id="dnd-abilities-cha-score">0</p>
+                        <p class="dnd-p unselectable dnd-abilities-modifier" id="dnd-abilities-cha-modifier">+ 0</p>
+                        <h3 class ="unselectable dnd-h3" id="dnd-abilities-cha-h3"></h3>
+                    </div>
+                </div>
+            </section>
+            <hr/>
+            <!-- ABILITIES END -->
+            <!-- SKILLS START -->
+            <section class="dnd-section" id="dnd-skills">
+                <h2 class ="unselectable dnd-h2" id="dnd-skills-h2"></h2>
+                <div class="dnd-div-wrapper-row">
+                    <!-- STR START -->
+                    <div class="dnd-div-column dnd-skills" id="dnd-skills-str">
+                        <h3 class ="unselectable dnd-h3" id="dnd-skills-str-h3"></h3>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-str-athletics">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-str-athletics-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-str-athletics-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-str-athletics-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-str-athletics-h4"></h4>
+                        </div>
+                    </div>
+                    <!-- STR END -->
+                    <!-- DEX START -->
+                    <div class="dnd-div-column dnd-skills" id="dnd-skills-dex">
+                        <h3 class ="unselectable dnd-h3" id="dnd-skills-dex-h3"></h3>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-dex-acrobatics">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-dex-acrobatics-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-dex-acrobatics-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-dex-acrobatics-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-dex-acrobatics-h4"></h4>
+                        </div>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-dex-soh">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-dex-soh-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-dex-soh-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-dex-soh-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-dex-soh-h4"></h4>
+                        </div>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-dex-stealth">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-dex-stealth-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-dex-stealth-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-dex-stealth-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-dex-stealth-h4"></h4>
+                        </div>
+                    </div>
+                    <!-- DEX END -->
+                    <!-- INT START -->
+                    <div class="dnd-div-column dnd-skills" id="dnd-skills-int">
+                        <h3 class ="unselectable dnd-h3" id="dnd-skills-int-h3"></h3>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-int-arcana">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-int-arcana-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-int-arcana-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-int-arcana-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-int-arcana-h4"></h4>
+                        </div>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-int-history">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-int-history-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-int-history-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-int-history-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-int-history-h4"></h4>
+                        </div>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-int-investigation">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-int-investigation-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-int-investigation-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-int-investigation-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-int-investigation-h4"></h4>
+                        </div>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-int-nature">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-int-nature-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-int-nature-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-int-nature-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-int-nature-h4"></h4>
+                        </div>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-int-religion">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-int-religion-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-int-religion-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-int-religion-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-int-religion-h4"></h4>
+                        </div>
+                    </div>
+                    <!-- INT END -->
+                    <!-- WIS START -->
+                    <div class="dnd-div-column dnd-skills" id="dnd-skills-wis">
+                        <h3 class ="unselectable dnd-h3" id="dnd-skills-wis-h3"></h3>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-wis-animalh">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-wis-animalh-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-wis-animalh-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-wis-animalh-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-wis-animalh-h4"></h4>
+                        </div>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-wis-insight">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-wis-insight-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-wis-insight-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-wis-insight-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-wis-insight-h4"></h4>
+                        </div>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-wis-medicine">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-wis-medicine-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-wis-medicine-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-wis-medicine-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-wis-medicine-h4"></h4>
+                        </div>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-wis-perception">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-wis-perception-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-wis-perception-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-wis-perception-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-wis-perception-h4"></h4>
+                        </div>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-wis-survival">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-wis-survival-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-wis-survival-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-wis-survival-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-wis-survival-h4"></h4>
+                        </div>
+                    </div>
+                    <!-- WIS END -->
+                    <!-- CHA START -->
+                    <div class="dnd-div-column dnd-skills" id="dnd-skills-cha">
+                        <h3 class ="unselectable dnd-h3" id="dnd-skills-cha-h3"></h3>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-cha-deception">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-cha-deception-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-cha-deception-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-cha-deception-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-cha-deception-h4"></h4>
+                        </div>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-cha-intimidation">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-cha-intimidation-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-cha-intimidation-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-cha-intimidation-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-cha-intimidation-h4"></h4>
+                        </div>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-cha-performance">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-cha-performance-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-cha-performance-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-cha-performance-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-cha-performance-h4"></h4>
+                        </div>
+                        <div class="dnd-div-row dnd-skills-div" id="dnd-skills-cha-persuassion">
+                            <p class="dnd-p unselectable dnd-skills-prof" id="dnd-skills-cha-persuassion-prof"></p>
+                            <p class="dnd-p unselectable dnd-skills-score" id="dnd-skills-cha-persuassion-score">0</p>
+                            <p class="dnd-p unselectable dnd-skills-modifier" id="dnd-skills-cha-persuassion-modifier">+ 0</p>
+                            <h4 class ="unselectable dnd-h4" id="dnd-skills-cha-persuassion-h4"></h4>
+                        </div>
+                    </div>
+                    <!-- CHA END -->
+                </div>
+            </section>
+            <hr/>
+            <!-- ABILITIES END -->
+            <!-- SPELLS START -->
+            <section class="dnd-section" id="dnd-spells">
+                <h2 class ="unselectable dnd-h2" id="dnd-spells-h2"></h2>
+                <table class="dnd-table" id="dnd-spells-table">
+                    <tr>
+                        <th class="dnd-th dnd-spells-th" id="dnd-spells-name"></th>
+                        <th class="dnd-th dnd-spells-th" id="dnd-spells-description"></th>
+                        <th class="dnd-th dnd-spells-th" id="dnd-spells-level"></th>
+                        <th class="dnd-th dnd-spells-th" id="dnd-spells-school"></th>
+                        <th class="dnd-th dnd-spells-th" id="dnd-spells-castingtime"></th>
+                        <th class="dnd-th dnd-spells-th" id="dnd-spells-range"></th>
+                        <th class="dnd-th dnd-spells-th" id="dnd-spells-duration"></th>
+                        <th class="dnd-th dnd-spells-th" id="dnd-spells-components"></th>
+                    </tr>
+                    <tr>
+                        <td>lorem</td>
+                        <td>lorem</td>
+                        <td>lorem</td>
+                        <td>lorem</td>
+                        <td>lorem</td>
+                        <td>lorem</td>
+                        <td>lorem</td>
+                        <td>lorem</td>
+                    </tr>
+                </table>
+                <button class="dnd-button dnd-table-add" id="dnd-spells-add"></button>
+                <button class="dnd-button dnd-table-clear" id="dnd-spells-clear"></button>
+            </section>
+            <hr/>
+            <!-- SPELLS END -->
+            <!-- EQUIPMENT START -->
+            <section class="dnd-section" id="dnd-equipment">
+                <h2 class ="unselectable dnd-h2" id="dnd-equipment-h2"></h2>
+                <div>
+                    <h3 id="dnd-equipment-weapons-h3"></h3>
+                    <table class="dnd-table" id="dnd-equipment-weapons-table">
+                        <tr>
+                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-name"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-description"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-price"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-weight"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-damage"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-damagetype"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-abilityused"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-mastery"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-properties"></th>
+                        </tr>
+                        <tr>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                        </tr>
+                    </table>
+                    <button class="dnd-button dnd-table-add" id="dnd-equipment-weapons-add"></button>
+                    <button class="dnd-button dnd-table-clear" id="dnd-equipment-weapons-clear"></button>
+                </div>
+                <div>
+                    <h3 id="dnd-equipment-armor-h3"></h3>
+                    <table class="dnd-table" id="dnd-equipment-armor-table">
+                        <tr>
+                            <th class="dnd-th dnd-equipment-armor-th" id="dnd-equipment-armor-name"></th>
+                            <th class="dnd-th dnd-equipment-armor-th" id="dnd-equipment-armor-description"></th>
+                            <th class="dnd-th dnd-equipment-armor-th" id="dnd-equipment-armor-price"></th>
+                            <th class="dnd-th dnd-equipment-armor-th" id="dnd-equipment-armor-weight"></th>
+                            <th class="dnd-th dnd-equipment-armor-th" id="dnd-equipment-armor-ac"></th>
+                            <th class="dnd-th dnd-equipment-armor-th" id="dnd-equipment-armor-dexac"></th>
+                            <th class="dnd-th dnd-equipment-armor-th" id="dnd-equipment-armor-strmin"></th>
+                            <th class="dnd-th dnd-equipment-armor-th" id="dnd-equipment-armor-stealthdis"></th>
+                        </tr>
+                        <tr>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                        </tr>
+                    </table>
+                    <button class="dnd-button dnd-table-add" id="dnd-equipment-armor-add"></button>
+                    <button class="dnd-button dnd-table-clear" id="dnd-equipment-armor-clear"></button>
+                </div>
+                <div>
+                    <h3 id="dnd-equipment-objects-h3"></h3>
+                    <table class="dnd-table" id="dnd-equipment-objects-table">
+                        <tr>
+                            <th class="dnd-th dnd-equipment-objects-th" id="dnd-equipment-objects-name"></th>
+                            <th class="dnd-th dnd-equipment-objects-th" id="dnd-equipment-objects-description"></th>
+                            <th class="dnd-th dnd-equipment-objects-th" id="dnd-equipment-objects-price"></th>
+                            <th class="dnd-th dnd-equipment-objects-th" id="dnd-equipment-objects-weight"></th>
+                        </tr>
+                        <tr>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                            <td>lorem</td>
+                        </tr>
+                    </table>
+                    <button class="dnd-button dnd-table-add" id="dnd-equipment-objects-add"></button>
+                    <button class="dnd-button dnd-table-clear" id="dnd-equipment-objects-clear"></button>
+                </div>
+            </section>
+            <hr/>
+            <!-- EQUIPMENT END -->
+            <!-- INFORMATION START -->
+            <section class="dnd-section" id="dnd-information">
+                <h2 class ="unselectable dnd-h2" id="dnd-information-h2"></h2>
+                <div class="dnd-div-wrapper-row">
+                    <div id="dnd-information-ac">
+                        <h3 class ="unselectable dnd-h3" id="dnd-information-ac-h3"></h3>
+                        <p class="dnd-p unselectable dnd-information-p" id="dnd-information-ac-p"></p>
+                    </div>
+                    <div id="dnd-information-initiative">
+                        <h3 class ="unselectable dnd-h3" id="dnd-information-initiative-h3"></h3>
+                        <p class="dnd-p unselectable dnd-information-p" id="dnd-information-initiative-p"></p>
+                    </div>
+                    <div id="dnd-information-speed">
+                        <h3 class ="unselectable dnd-h3" id="dnd-information-speed-h3"></h3>
+                        <p class="dnd-p unselectable dnd-information-p" id="dnd-information-speed-p"></p>
+                    </div>
+                </div>
+            </section>
+            <hr/>
+            <!-- INFORMATION END -->
+            <!-- DETAILS START -->
+            <section class="dnd-section" id="dnd-details">
+                <h2 class ="unselectable dnd-h2" id="dnd-details-h2"></h2>
+                <div class="dnd-div-wrapper-row">
+                    <div class="dnd-div-row">
+                        <label class="dnd-label unselectable" id="dnd-details-name-label" for="dnd-details-name"></label>
+                        <input class="dnd-input" type="text" id="dnd-details-name" maxlength="31">
+                    </div>
+                    <div class="dnd-div-row">
+                        <label class="dnd-label unselectable" id="dnd-details-gender-label" for="dnd-details-gender"></label>
+                        <input class="dnd-input" type="text" id="dnd-details-gender">
+                    </div>
+                </div>
+                <div class="dnd-div-wrapper-column">
+                    <label class="dnd-label unselectable" id="dnd-details-background-label" for="dnd-details-background"></label>
+                    <textarea class="dnd-textarea" id="dnd-details-background" maxlength="255"></textarea>
+                </div>
+                <div class="dnd-div-wrapper-column">
+                    <label class="dnd-label unselectable" id="dnd-details-alignment-label" for="dnd-details-alignment"></label>
+                    <textarea class="dnd-textarea" id="dnd-details-alignment" maxlength="255"></textarea>
+                </div>
+                <div class="dnd-div-wrapper-column">
+                    <label class="dnd-label unselectable" id="dnd-details-appearance-label" for="dnd-details-appearance"></label>
+                    <textarea class="dnd-textarea" id="dnd-details-appearance" maxlength="255"></textarea>
+                </div>
+            </section>
+            <hr/>
+            <!-- DETAILS END -->
+            <button class="dnd-button" id="dnd-save-button">Save</button>
+            <button class="dnd-button" id="dnd-clear-button">Clear</button>
+        </form>
+    </main>
+    <div id="popupedit" class="overlay">
+        <div class="popup10">
+        <a class="close" href="#"></a>
+        ........
+        </div>
+    </div>
+    <!-- DND END -->
+</body>
+</html>
