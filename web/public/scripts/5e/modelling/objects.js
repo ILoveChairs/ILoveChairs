@@ -31,3 +31,16 @@ export class DnDObject {
         return `${this.esName}: ${this.esDesc}`;
     }
 }
+
+export function loadDnDObject(jsonObject) {
+    return new DnDObject({
+        // Common
+        enName: jsonObject.enName,
+        esName: jsonObject.esName,
+        enDesc: jsonObject.enDesc,
+        esDesc: jsonObject.esDesc,
+        // Object
+        weight: jsonObject.weight,
+        cost: jsonObject.cost
+    });
+}

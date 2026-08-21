@@ -492,57 +492,116 @@ a:visited {
 #dnd-save-button, #dnd-clear-button {
     margin: 10px 20px;
 }
-/* END END*/
+/* END END */
 
-/* OVERLAY START*/
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
-  z-index: 2000;
+/* OVERLAY START */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+    visibility: visible;
+    opacity: 1;
+    display: block;
 }
-.overlay:target {
-  visibility: visible;
-  opacity: 1;
+.popup-overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+.popup-overlay-hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+/* OVERLAY END */
+
+/* POPUP START */
+.popup-div {
+    display: flex;
+    flex-direction: column;
+    z-index: 101;
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+    transition: all 1s ease-in-out;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    max-height: 90vw;
 }
 
-.popup10 {
-  margin: 70px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  width: 50%;
-  position: relative;
-  transition: all 5s ease-in-out;
+.popup-item-name-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    padding: 5px;
+}
+.popup-item-name-div:hover {
+    background-color: rgb(250, 250, 250);
+}
+.popup-item-name-h2 {
+    display: block;
+    margin-top: 0;
+    color: var(--text-color);
+    font-family: var(--font-family-base);
+}
+.popup-item-name-button {
+    font-family: var(--font-family-base);
+    color: var(--text-color);
+    display: block;
+    background-color: white;
+    border-radius: 100%;
+}
+.popup-item-name-button:hover {
+    background-color: rgb(233, 233, 233);
+}
+.popup-item-name-button:active {
+    background-color: rgb(103, 255, 159);
 }
 
-.popup10 h2 {
-  margin-top: 0;
-  color: #333;
-  font-family: Tahoma, Arial, sans-serif;
+.popup-item-details-div {
+    display: flex;
+    flex-direction: column;
 }
-.popup10 .close {
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
+.popup-item-details-div-hide {
+    display: none;
 }
-.popup10 .close:hover {
-  color: #06D85F;
+.popup-item-details-hr1 {
+    display: block;
+    width: 100%;
+    color: black;
 }
-.popup10 .content {
-  max-height: 30%;
-  overflow: auto;
+.popup-item-details-desc {
+    display: block;
+    margin-bottom: 10px;
 }
-/* OVERLAY END*/
+.popup-item-details-hr2 {
+    display: block;
+    width: 100%;
+    color: gray;
+}
+
+.popup-item-details-objects-div {
+    display: flex;
+    flex-direction: column;
+}
+.popup-item-details-object-div {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.popup-item-details-object-key {
+    display: block;
+}
+.popup-item-details-object-value {
+    display: block;
+    margin-left: 5px;
+}
+/* POPUP END */
 /* * DND END*/

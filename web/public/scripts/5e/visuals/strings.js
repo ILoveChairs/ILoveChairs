@@ -1,5 +1,10 @@
 import * as Ids from "./ids.js";
 
+export const langs = Object.freeze({
+    en: "en",
+    es: "es"
+})
+
 export class StringPair {
     constructor(ids, strings) {
         this.ids = ids;

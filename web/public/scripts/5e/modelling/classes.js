@@ -1,3 +1,4 @@
+import * as Changers from "./changers.js";
 
 /**
  * Class made to pair level with a class feat.
@@ -11,6 +12,8 @@ export class DnDClassFeat {
         return `Level ${this.level}: ${this.feat}`;
     }
 }
+// TODO
+export function loadDnDClassFeat(jsonObject) {}
 
 /**
  * Representation of a character class.
@@ -62,6 +65,8 @@ export class DnDClass {
         return `${this.esName}: ${this.esDesc}`;
     }
 }
+// TODO
+export function loadDnDClass(jsonObject) {}
 
 /**
  * Representation of a character sub-class.
@@ -94,3 +99,5 @@ export class DnDSubClass {
         return `${this.esName}: ${this.esDesc}`;
     }
 }
+// TODO
+export function loadDnDSubClass(jsonObject) {}

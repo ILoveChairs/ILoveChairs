@@ -1,4 +1,10 @@
 
+const armorTypes = Object.freeze({
+    "light": {enName: "Light Armor", esName: "Armadura Ligera"},
+    "medium": {enName: "Medium Armor", esName: "Armadura Mediana"},
+    "heavy": {enName: "Heavy Armor", esName: "Armadura Pesada"}
+});
+
 /**
  * Represents wearable armor.
  */
@@ -13,6 +19,7 @@ export class Armor {
         weight=null,
         cost=null,
         // Armor
+        type=null,
         ac=null,
         maxDexAc=null,
         strMin=null,
@@ -27,6 +34,7 @@ export class Armor {
         this.weight = weight;
         this.cost = cost;
         // Armor
+        this.type = type;
         this.ac = ac;
         this.maxDexAc = maxDexAc;
         this.strMin = strMin;
@@ -38,4 +46,23 @@ export class Armor {
     esToString() {
         return `${this.esName}: ${this.esDesc}`;
     }
+}
+export function loadArmor(jsonObject) {
+    const type = armorTypes[jsonObject.type];
+    return new Weapon({
+        // Common
+        enName: jsonObject.enName,
+        esName: jsonObject.esName,
+        enDesc: jsonObject.enDesc,
+        esDesc: jsonObject.esDesc,
+        // Object
+        weight: jsonObject.weight,
+        cost: jsonObject.cost,
+        // Weapon
+        type: type,
+        ac = jsonObject.ac,
+        maxDexAc = jsonObject.maxDexAc,
+        strMin = jsonObject.strMin,
+        stealthDisadvantage = jsonObject.stealthDisadvantage
+    });
 }

@@ -57,6 +57,8 @@ export class AbilityChanger {
         });
     }
 }
+// TODO
+export function loadAbilityChanger(jsonObject) {}
 
 /**
  * Class representing a list of changes to be made on skills.
@@ -150,6 +152,8 @@ export class SkillChanger {
         });
     }
 }
+// TODO
+export function loadSkillChanger(jsonObject) {}
 
 /**
  * Class representing a list of changes to be made on non-skill proficiencies.
@@ -226,6 +230,8 @@ export class ProficiencyChanger {
         });
     }
 }
+// TODO
+export function loadProficiencyChanger(jsonObject) {}
 
 /**
  * Class representing a list of changes to be made on special characteristics.
@@ -271,6 +277,8 @@ export class SpecialChanger {
         });
     }
 }
+// TODO
+export function loadSpecialChanger(jsonObject) {}
 
 /**
  * Base class for Feats, Backgrounds and Character Races.
@@ -310,6 +318,8 @@ class Changer {
         return `${this.esName}: ${this.esDesc}`;
     }
 }
+// TODO
+export function loadChanger(jsonObject) {}
 
 /**
  * Represents the Feats that variant humans and ability score increases grant.

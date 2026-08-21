@@ -1,4 +1,3 @@
-import * as Base from "./base.js";
 
 /**
  * Represents all the schools of magic.
@@ -14,24 +13,24 @@ export const schoolsOfMagic = Object.freeze({
     illusion: {enName: "Illusion", esName: "Ilusión"}
 });
 
-export const components = Object.freeze({
-    V:"",
-    S:"",
-    M:""
+export const allComponents = Object.freeze({
+    V: {enName: "Verbal", esName: "Verbal"},
+    S: {enName: "Semantic", esName: "Semántico"},
+    M: {enName: "Material", esName: "Material"}
 })
 
-export const spellLists = Object.freeze({
-    artificer: {},
-    bard: {},
-    cleric: {},
-    druid: {},
-    fighterEldritchKnight: {},
-    paladin: {},
-    ranger: {},
-    rogueArcaneTrickster: {},
-    sorcerer: {},
-    warlock: {},
-    wizard: {}
+export const allSpellLists = Object.freeze({
+    artificer: {enName: "Artificer", esName: "Artífice"},
+    bard: {enName: "Bard", esName: "Bardo"},
+    cleric: {enName: "Cleric", esName: "Clérigo"},
+    druid: {enName: "Druid", esName: "Druida"},
+    fighterEldritchKnight: {enName: "Eldritch Knight", esName: "Caballero Arcano"},
+    paladin: {enName: "Paladin", esName: "Paladín"},
+    ranger: {enName: "Ranger", esName: "Explorador"},
+    rogueArcaneTrickster: {enName: "Arcane Trickster", esName: "Bribón Arcano"},
+    sorcerer: {enName: "Sorcerer", esName: "Hechicero"},
+    warlock: {enName: "Warlock", esName: "Brujo"},
+    wizard: {enName: "Wizard", esName: "Mago"}
 })
 
 /**
@@ -45,6 +44,7 @@ export class Spell {
         enDesc="",
         esDesc="",
         // Spell
+        level=null,
         school=null,
         castingTime=null,
         range=null,
@@ -58,12 +58,13 @@ export class Spell {
         this.enDesc = enDesc;
         this.esDesc = esDesc;
         // Spell
+        this.level = level;
         this.school = school;
         this.castingTime = castingTime;
         this.range = range;
         this.duration = duration;
         this.components = components;
-
+        this.spellLists = spellLists;
     }
     toString() {
         return `${this.enName}: ${this.enDesc}`;
@@ -71,4 +72,33 @@ export class Spell {
     esToString() {
         return `${this.esName}: ${this.esDesc}`;
     }
+}
+export function loadSpell(jsonObject) {
+    const school = schoolsOfMagic[jsonObject.school];
+    const castingTime = loadTime(jsonObject.castingTime);
+    const range = loadDistance(jsonObject.range);
+    const duration = loadTime(jsonObject.duration);
+    const components = [];
+    for (const comps of jsonObject.components) {
+        components.push(allComponents[comps]);
+    }
+    const spellLists = [];
+    for (const sls of jsonObject.spellLists) {
+        spellLists.push(allSpellLists[sls]);
+    }
+    return new Spell({
+        // Common
+        enName: jsonObject.enName,
+        esName: jsonObject.esName,
+        enDesc: jsonObject.enDesc,
+        esDesc: jsonObject.esDesc,
+        // sepll
+        level = jsonObject.level,
+        school = school,
+        castingTime = castingTime,
+        range = range,
+        duration = duration,
+        components = components,
+        spellLists = spellLists
+    });
 }

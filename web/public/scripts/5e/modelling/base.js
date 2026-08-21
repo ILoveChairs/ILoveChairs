@@ -65,6 +65,15 @@ export const die = Object.freeze({
     d100: new Die(1, 100),
 })
 
+export function loadDie(jsonString) {
+    const data = jsonString.split(/d|\s\+\s|\s\-\s/gmi);
+    const quantity = parseInt(data[0]);
+    const type = parseInt(data[1]);
+    const negativeMultiplier = jsonString.search(/\-/) === -1? 1 : -1;
+    const bonus = data.length >= 3? parseInt(data[2]): null;
+    return new Die(quantity, type, bonus * negativeMultiplier);
+}
+
 /**
  * Represents a way to measure time.
  */
@@ -90,6 +99,14 @@ export class Time {
         return `${this.amount} ${this.measurement.enName}`
     }
 }
+export function loadTime(jsonString="") {
+    const info = jsonString.split(" ");
+    if (info.length !== 2)
+        throw new Error("loadTime: split failed");
+    const amountAsString = info[0];
+    const measurement = timeMeasurement[info[1]];
+    return new Time(amountAsString, measurement);
+}
 
 /**
  * Represents a distance between 2 points measured in feet.
@@ -103,6 +120,9 @@ export class Distance {
     toString() {
         return `${this.amount} ft`
     }
+}
+export function loadDistance(jsonString="") {
+    return new Distance(jsonString.split(" ")[0]);
 }
 
 

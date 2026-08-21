@@ -34,6 +34,7 @@
     <!-- JS VISUALS -->
     <script type="module" src="./scripts/5e/visuals/ids.js"></script>
     <script type="module" src="./scripts/5e/visuals/strings.js"></script>
+    <script type="module" src="./scripts/5e/visuals/popup.js"></script>
     <!-- JS LOADER -->
     <script type="module" src="./scripts/5e/jsonLoader.js"></script>
     <!-- JS MAIN -->
@@ -53,7 +54,7 @@
             <!-- CENTER -->
             <nav class="header-div" id="header-nav">
                 <ul>
-                    <li><a class="unselectable" href="#" id="spanish-button">Spanish</a></li>
+                    <li><a class="unselectable" href="#" id="spanish-button">Español</a></li>
                     <li><a class="unselectable" href="#" id="english-button">English</a></li>
                 </ul>
             </nav>
@@ -61,7 +62,7 @@
             <!-- RIGHT -->
             <div class="header-div" id="header-dropdown-div">
                 <div id="header-dropdown">
-                    <button class="dnd-button" id="header-dropdown-btn">Other Pages ˅</button>
+                    <button class="dnd-button unselectable" id="header-dropdown-btn">Other Pages ˅</button>
                     <div id="header-dropdown-content">
                         <a href="./">Home</a>
                     </div>
@@ -87,7 +88,7 @@
                         <div class="dnd-div-row dnd-fundamentals-div">
                             <h3 class ="unselectable dnd-h3 dnd-fundamentals-h3" id="dnd-fundamentals-class-h3"></h3>
                             <div class="dnd-div-column dnd-dropdown-div" id="dnd-fundamentals-class-dropdown-div">
-                                <button class="dnd-dropdown-button unselectable" id="dnd-fundamentals-class-dropdown-button"></button>
+                                <button class="dnd-dropdown-button unselectable" id="dnd-fundamentals-class-dropdown-button" type="button"></button>
                                 <div class="dnd-dropdown-content-div" id="dnd-fundamentals-class-dropdown-content-div">
                                     <!-- Classes -->
                                     <p class="dnd-dropdown-content unselectable">Lorem Ipsum</p>
@@ -97,13 +98,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="dnd-div-column dnd-fundamentals-selectables">Lorem Ipsum</div>
+                        <div class="dnd-div-column dnd-fundamentals-selectables unselectable">Lorem Ipsum</div>
                     </div>
                     <div class="dnd-div-column dnd-fundamentals" id="dnd-fundamentals-race">
                         <div class="dnd-div-row dnd-fundamentals-div">
                             <h3 class ="unselectable dnd-h3 dnd-fundamentals-h3" id="dnd-fundamentals-race-h3"></h3>
                             <div class="dnd-div-column dnd-dropdown-div" id="dnd-fundamentals-race-dropdown-div">
-                                <button class="dnd-dropdown-button unselectable" id="dnd-fundamentals-race-dropdown-button"></button>
+                                <button class="dnd-dropdown-button unselectable" id="dnd-fundamentals-race-dropdown-button" type="button"></button>
                                 <div class="dnd-dropdown-content-div" id="dnd-fundamentals-race-dropdown-content-div">
                                     <!-- Races -->
                                     <p class="dnd-dropdown-content unselectable">Lorem Ipsum</p>
@@ -113,13 +114,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="dnd-div-column dnd-fundamentals-selectables">Lorem Ipsum</div>
+                        <div class="dnd-div-column dnd-fundamentals-selectables unselectable">Lorem Ipsum</div>
                     </div>
                     <div class="dnd-div-column dnd-fundamentals" id="dnd-fundamentals-background">
                         <div class="dnd-div-row dnd-fundamentals-div">
                             <h3 class ="unselectable dnd-h3 dnd-fundamentals-h3" id="dnd-fundamentals-background-h3"></h3>
                             <div class="dnd-div-column dnd-dropdown-div" id="dnd-fundamentals-background-dropdown-div">
-                                <button class="dnd-dropdown-button unselectable" id="dnd-fundamentals-background-dropdown-button"></button>
+                                <button class="dnd-dropdown-button unselectable" id="dnd-fundamentals-background-dropdown-button" type="button"></button>
                                 <div class="dnd-dropdown-content-div" id="dnd-fundamentals-background-dropdown-content-div">
                                     <!-- Backgrounds -->
                                     <p class="dnd-dropdown-content unselectable">Lorem Ipsum</p>
@@ -129,7 +130,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="dnd-div-column dnd-fundamentals-selectables">Lorem Ipsum</div>
+                        <div class="dnd-div-column dnd-fundamentals-selectables unselectable">Lorem Ipsum</div>
                     </div>
                 </div>
             </section>
@@ -321,18 +322,18 @@
             <hr/>
             <!-- ABILITIES END -->
             <!-- SPELLS START -->
-            <section class="dnd-section" id="dnd-spells">
+            <section class="dnd-section unselectable" id="dnd-spells">
                 <h2 class ="unselectable dnd-h2" id="dnd-spells-h2"></h2>
-                <table class="dnd-table" id="dnd-spells-table">
+                <table class="dnd-table unselectable" id="dnd-spells-table">
                     <tr>
-                        <th class="dnd-th dnd-spells-th" id="dnd-spells-name"></th>
-                        <th class="dnd-th dnd-spells-th" id="dnd-spells-description"></th>
-                        <th class="dnd-th dnd-spells-th" id="dnd-spells-level"></th>
-                        <th class="dnd-th dnd-spells-th" id="dnd-spells-school"></th>
-                        <th class="dnd-th dnd-spells-th" id="dnd-spells-castingtime"></th>
-                        <th class="dnd-th dnd-spells-th" id="dnd-spells-range"></th>
-                        <th class="dnd-th dnd-spells-th" id="dnd-spells-duration"></th>
-                        <th class="dnd-th dnd-spells-th" id="dnd-spells-components"></th>
+                        <th class="dnd-th dnd-spells-th unselectable" id="dnd-spells-name"></th>
+                        <th class="dnd-th dnd-spells-th unselectable" id="dnd-spells-description"></th>
+                        <th class="dnd-th dnd-spells-th unselectable" id="dnd-spells-level"></th>
+                        <th class="dnd-th dnd-spells-th unselectable" id="dnd-spells-school"></th>
+                        <th class="dnd-th dnd-spells-th unselectable" id="dnd-spells-castingtime"></th>
+                        <th class="dnd-th dnd-spells-th unselectable" id="dnd-spells-range"></th>
+                        <th class="dnd-th dnd-spells-th unselectable" id="dnd-spells-duration"></th>
+                        <th class="dnd-th dnd-spells-th unselectable" id="dnd-spells-components"></th>
                     </tr>
                     <tr>
                         <td>lorem</td>
@@ -345,27 +346,27 @@
                         <td>lorem</td>
                     </tr>
                 </table>
-                <button class="dnd-button dnd-table-add" id="dnd-spells-add"></button>
-                <button class="dnd-button dnd-table-clear" id="dnd-spells-clear"></button>
+                <button class="dnd-button dnd-table-add unselectable" id="dnd-spells-add" type="button"></button>
+                <button class="dnd-button dnd-table-clear unselectable" id="dnd-spells-clear" type="button"></button>
             </section>
             <hr/>
             <!-- SPELLS END -->
             <!-- EQUIPMENT START -->
             <section class="dnd-section" id="dnd-equipment">
                 <h2 class ="unselectable dnd-h2" id="dnd-equipment-h2"></h2>
-                <div>
-                    <h3 id="dnd-equipment-weapons-h3"></h3>
-                    <table class="dnd-table" id="dnd-equipment-weapons-table">
+                <div class="unselectable">
+                    <h3 class="unselectable" id="dnd-equipment-weapons-h3"></h3>
+                    <table class="dnd-table unselectable" id="dnd-equipment-weapons-table">
                         <tr>
-                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-name"></th>
-                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-description"></th>
-                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-price"></th>
-                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-weight"></th>
-                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-damage"></th>
-                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-damagetype"></th>
-                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-abilityused"></th>
-                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-mastery"></th>
-                            <th class="dnd-th dnd-equipment-weapons-th" id="dnd-equipment-weapons-properties"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th unselectable" id="dnd-equipment-weapons-name"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th unselectable" id="dnd-equipment-weapons-description"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th unselectable" id="dnd-equipment-weapons-price"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th unselectable" id="dnd-equipment-weapons-weight"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th unselectable" id="dnd-equipment-weapons-damage"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th unselectable" id="dnd-equipment-weapons-damagetype"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th unselectable" id="dnd-equipment-weapons-abilityused"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th unselectable" id="dnd-equipment-weapons-mastery"></th>
+                            <th class="dnd-th dnd-equipment-weapons-th unselectable" id="dnd-equipment-weapons-properties"></th>
                         </tr>
                         <tr>
                             <td>lorem</td>
@@ -379,21 +380,21 @@
                             <td>lorem</td>
                         </tr>
                     </table>
-                    <button class="dnd-button dnd-table-add" id="dnd-equipment-weapons-add"></button>
-                    <button class="dnd-button dnd-table-clear" id="dnd-equipment-weapons-clear"></button>
+                    <button class="dnd-button dnd-table-add unselectable" id="dnd-equipment-weapons-add" type="button"></button>
+                    <button class="dnd-button dnd-table-clear unselectable" id="dnd-equipment-weapons-clear" type="button"></button>
                 </div>
-                <div>
-                    <h3 id="dnd-equipment-armor-h3"></h3>
-                    <table class="dnd-table" id="dnd-equipment-armor-table">
+                <div class="unselectable">
+                    <h3 class="unselectable" id="dnd-equipment-armor-h3"></h3>
+                    <table class="dnd-table unselectable" id="dnd-equipment-armor-table">
                         <tr>
-                            <th class="dnd-th dnd-equipment-armor-th" id="dnd-equipment-armor-name"></th>
-                            <th class="dnd-th dnd-equipment-armor-th" id="dnd-equipment-armor-description"></th>
-                            <th class="dnd-th dnd-equipment-armor-th" id="dnd-equipment-armor-price"></th>
-                            <th class="dnd-th dnd-equipment-armor-th" id="dnd-equipment-armor-weight"></th>
-                            <th class="dnd-th dnd-equipment-armor-th" id="dnd-equipment-armor-ac"></th>
-                            <th class="dnd-th dnd-equipment-armor-th" id="dnd-equipment-armor-dexac"></th>
-                            <th class="dnd-th dnd-equipment-armor-th" id="dnd-equipment-armor-strmin"></th>
-                            <th class="dnd-th dnd-equipment-armor-th" id="dnd-equipment-armor-stealthdis"></th>
+                            <th class="dnd-th dnd-equipment-armor-th unselectable" id="dnd-equipment-armor-name"></th>
+                            <th class="dnd-th dnd-equipment-armor-th unselectable" id="dnd-equipment-armor-description"></th>
+                            <th class="dnd-th dnd-equipment-armor-th unselectable" id="dnd-equipment-armor-price"></th>
+                            <th class="dnd-th dnd-equipment-armor-th unselectable" id="dnd-equipment-armor-weight"></th>
+                            <th class="dnd-th dnd-equipment-armor-th unselectable" id="dnd-equipment-armor-ac"></th>
+                            <th class="dnd-th dnd-equipment-armor-th unselectable" id="dnd-equipment-armor-dexac"></th>
+                            <th class="dnd-th dnd-equipment-armor-th unselectable" id="dnd-equipment-armor-strmin"></th>
+                            <th class="dnd-th dnd-equipment-armor-th unselectable" id="dnd-equipment-armor-stealthdis"></th>
                         </tr>
                         <tr>
                             <td>lorem</td>
@@ -406,17 +407,17 @@
                             <td>lorem</td>
                         </tr>
                     </table>
-                    <button class="dnd-button dnd-table-add" id="dnd-equipment-armor-add"></button>
-                    <button class="dnd-button dnd-table-clear" id="dnd-equipment-armor-clear"></button>
+                    <button class="dnd-button dnd-table-add unselectable" id="dnd-equipment-armor-add" type="button"></button>
+                    <button class="dnd-button dnd-table-clear unselectable" id="dnd-equipment-armor-clear" type="button"></button>
                 </div>
-                <div>
-                    <h3 id="dnd-equipment-objects-h3"></h3>
-                    <table class="dnd-table" id="dnd-equipment-objects-table">
+                <div class="unselectable">
+                    <h3 class="unselectable" id="dnd-equipment-objects-h3"></h3>
+                    <table class="dnd-table unselectable" id="dnd-equipment-objects-table">
                         <tr>
-                            <th class="dnd-th dnd-equipment-objects-th" id="dnd-equipment-objects-name"></th>
-                            <th class="dnd-th dnd-equipment-objects-th" id="dnd-equipment-objects-description"></th>
-                            <th class="dnd-th dnd-equipment-objects-th" id="dnd-equipment-objects-price"></th>
-                            <th class="dnd-th dnd-equipment-objects-th" id="dnd-equipment-objects-weight"></th>
+                            <th class="dnd-th dnd-equipment-objects-th unselectable" id="dnd-equipment-objects-name"></th>
+                            <th class="dnd-th dnd-equipment-objects-th unselectable" id="dnd-equipment-objects-description"></th>
+                            <th class="dnd-th dnd-equipment-objects-th unselectable" id="dnd-equipment-objects-price"></th>
+                            <th class="dnd-th dnd-equipment-objects-th unselectable" id="dnd-equipment-objects-weight"></th>
                         </tr>
                         <tr>
                             <td>lorem</td>
@@ -425,8 +426,8 @@
                             <td>lorem</td>
                         </tr>
                     </table>
-                    <button class="dnd-button dnd-table-add" id="dnd-equipment-objects-add"></button>
-                    <button class="dnd-button dnd-table-clear" id="dnd-equipment-objects-clear"></button>
+                    <button class="dnd-button dnd-table-add unselectable" id="dnd-equipment-objects-add" type="button"></button>
+                    <button class="dnd-button dnd-table-clear unselectable" id="dnd-equipment-objects-clear" type="button"></button>
                 </div>
             </section>
             <hr/>
@@ -479,14 +480,12 @@
             </section>
             <hr/>
             <!-- DETAILS END -->
-            <button class="dnd-button" id="dnd-save-button">Save</button>
-            <button class="dnd-button" id="dnd-clear-button">Clear</button>
+            <button class="dnd-button unselectable" id="dnd-save-button" type="button">Save</button>
+            <button class="dnd-button unselectable" id="dnd-clear-button" type="button">Clear</button>
         </form>
     </main>
-    <div id="popupedit" class="overlay">
-        <div class="popup10">
-        <a class="close" href="#"></a>
-        ........
+    <div id="popup-overlay" class="unselectable popup-overlay popup-overlay-hidden">
+        <div class="unselectable popup-div" id="popup-div">
         </div>
     </div>
     <!-- DND END -->

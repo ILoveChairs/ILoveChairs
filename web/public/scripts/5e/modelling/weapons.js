@@ -1,3 +1,11 @@
+import { damages, loadDie } from "./base.js";
+
+export const weaponTypes = Object.freeze({
+    simpleMelee: {},
+    simpleRanged: {},
+    martialMelee: {},
+    martialRanged: {}
+});
 
 export const weaponProperties = Object.freeze({
     ammunition: {enName: "Ammunnition", esName: "Munición",
@@ -8,26 +16,61 @@ export const weaponProperties = Object.freeze({
         enDesc: "You can use either your Strength modifier or your Dexterity modifier whenever you use the weapon. You must use the same modifier for both attack and damage.",
         esDesc: "Podés usar tu m"
     },
-    heavy: "heavy",
-    light: "light",
-    loading: "loading",
-    range: "range",
-    reach: "reach",
-    thrown: "thrown",
-    twoHanded: "two-handed",
-    versatile: "versatile"
+    heavy: {enName: "Heavy", esName: "Pesado", enDesc:"", esDesc:""},
+    light: {enName: "Light", esName: "Ligero", enDesc:"", esDesc:""},
+    loading: {enName: "Loading", esName: "Recarga", enDesc:"", esDesc:""},
+    range: {enName: "Range", esName: "Rango", enDesc:"", esDesc:""},
+    reach: {enName: "Reach", esName: "Alcance", enDesc:"", esDesc:""},
+    thrown: {enName: "Thrown", esName: "Tirable", enDesc:"", esDesc:""},
+    twoHanded: {enName: "Two-handed", esName: "Dos manos", enDesc:"", esDesc:""},
+    versatile: {enName: "Versatile", esName: "Versátil", enDesc:"", esDesc:""}
 });
 
 export const masteryProperties = Object.freeze({
-    cleave: {},
-    graze: {},
-    nick: {},
-    push: {},
-    sap: {},
-    slow: {},
-    topple: {},
-    vex: {}
+    cleave: {enName="Cleave", esName="", enDesc:"", esDesc:""},
+    graze: {enName="Graze", esName="", enDesc:"", esDesc:""},
+    nick: {enName="Nick", esName="", enDesc:"", esDesc:""},
+    push: {enName="Push", esName="", enDesc:"", esDesc:""},
+    sap: {enName="Sap", esName="", enDesc:"", esDesc:""},
+    slow: {enName="Slow", esName="", enDesc:"", esDesc:""},
+    topple: {enName="Topple", esName="", enDesc:"", esDesc:""},
+    vex: {enName="Vex", esName="", enDesc:"", esDesc:""}
 });
+
+export class WeaponPropertyExpanded {
+    constructor(weaponProperty, additionalInfo="") {
+        this.weaponProperty = weaponProperty;
+        this.additionalInfo = additionalInfo;
+    }
+    esAdditionalInfo() {
+        if (this.additionalInfo === null || this.additionalInfo === undefined || this.additionalInfo.length === 0)
+            return null;
+
+        const infos = this.additionalInfo.split(";");
+        for (const info in infos) {
+            const enEs = infos[info].split("/");
+            // If not number:
+            if (!( /^-?\d+$/.test(enEs[0]) ))
+                // Delete en part.
+                infos[info].replace(enEs[0] + "/", "");
+        }
+        return infos;
+    }
+    enAdditionalInfo() {
+        if (this.additionalInfo === null || this.additionalInfo === undefined || this.additionalInfo.length === 0)
+            return null;
+
+        const infos = this.additionalInfo.split(";");
+        for (const info in infos) {
+            const enEs = infos[info].split("/");
+            // If not number:
+            if (!( /^-?\d+$/.test(enEs[0]) ))
+                // Delete es part.
+                infos[info].replace("/" + enEs[1], "");
+        }
+        return infos;
+    }
+}
 
 export class Weapon {
     constructor({
@@ -40,11 +83,10 @@ export class Weapon {
         weight=null,
         cost=null,
         // Weapon
+        type=null,
         dmg=null,
         dmgType=null,
-        abilityUsed=null,
         masteryProperty=null,
-        range=null,
         properties=[]
     }) {
         // Common
@@ -56,9 +98,9 @@ export class Weapon {
         this.weight = weight;
         this.cost = cost;
         // Weapon
+        this.type = type;
         this.dmg = dmg;
         this.dmgType = dmgType;
-        this.abilityUsed = abilityUsed;
         this.masteryProperty = masteryProperty;
         this.properties = properties;
     }
@@ -68,4 +110,37 @@ export class Weapon {
     esToString() {
         return `${this.esName}: ${this.esDesc}`;
     }
+}
+
+export function loadWeapon(jsonObject) {
+    const type = weaponTypes[jsonObject.type];
+    const dmg = loadDie(jsonObject.dmg);
+    const dmgType = damages[jsonObject.dmgType];
+    const masteryProperty = masteryProperties[jsonObject.masteryProperty];
+    const properties = [];
+    for (const prop of jsonObject.properties) {
+        const weaponPropertyString = weaponProperties.find((wP) => wP.includes(prop)).replace(")", "").split("(");
+        if (weaponPropertyString === undefined || weaponPropertyString === null || weaponPropertyString.length === 0)
+            console.error("Weapon Property unproperly deserialized.");
+        const weaponProperty = weaponProperty[0];
+        const additionalInfo = weaponProperty.length > 1 ? weaponProperty[1] : "";
+        const wpe = new WeaponPropertyExpanded(weaponProperty, additionalInfo);
+        properties.push(weaponProperties[wpe]);
+    }
+    return new Weapon({
+        // Common
+        enName: jsonObject.enName,
+        esName: jsonObject.esName,
+        enDesc: jsonObject.enDesc,
+        esDesc: jsonObject.esDesc,
+        // Object
+        weight: jsonObject.weight,
+        cost: jsonObject.cost,
+        // Weapon
+        type: type,
+        dmg: dmg,
+        dmgType: dmgType,
+        masteryProperty: masteryProperty,
+        properties: properties
+    });
 }

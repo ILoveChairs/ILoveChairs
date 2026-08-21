@@ -1,0 +1,1180 @@
+{
+  "objects": [
+    {
+      "enName": "Acid",
+      "esName": "",
+      "enDesc": "When you take the Attack action, you can replace one of your attacks with throwing a vial of Acid. Target one creature or object you can see within 20 feet of yourself. The target must succed on a Dexterity saving throw (DC 8 + your Dexterity modifier + Proficieny Bouns) or take 2d6 Acid damage.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 25
+    },
+    {
+      "enName": "Alchemist's Fire",
+      "esName": "",
+      "enDesc": "When you take the Attack action, you can replace one of your attacks with throwing a flask of Alchemist's Fire. Target one creature or object you can see within 20 feet of yourself. The target must succeed on a Dexterity saving throw (DC 8 + your Dexterity modifier + Proficieny Bouns) or take 1d4 Fire damage and start burning.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 50
+    },
+    {
+      "enName": "Ammunition: 20 Arrows",
+      "esName": "",
+      "enDesc": "Ammunition for bows. Stored in quivers.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 1
+    },
+    {
+      "enName": "Ammunition: 20 Bolts",
+      "esName": "",
+      "enDesc": "Ammunition for crossbows. Stored in bolt cases.",
+      "esDesc": "",
+      "weight": 1.5,
+      "cost": 1
+    },
+    {
+      "enName": "Ammunition: 10 Firearm Bullets",
+      "esName": "",
+      "enDesc": "Ammunition for firearms. Stored in pouches.",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 3
+    },
+    {
+      "enName": "Ammunition: 20 Sling Bullets",
+      "esName": "",
+      "enDesc": "Ammunition for slings. Stored in pouches",
+      "esDesc": "",
+      "weight": 1.5,
+      "cost": 0.04
+    },
+    {
+      "enName": "Ammunition: 50 Blowgun Needles",
+      "esName": "",
+      "enDesc": "Ammunition for blowgun. Stored in pouches.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 1
+    },
+    {
+      "enName": "Antitoxin",
+      "esName": "",
+      "enDesc": "As a Bonus Action, you can drink a vial of Antitoxin to gain Advantage on saving throws to avoid or end the Poisoned condition for 1 hour.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 50
+    },
+    {
+      "enName": "Arcane Focus: Crystal",
+      "esName": "",
+      "enDesc": "Spellcasting Focus for Sorcerers, Warlocks and Wizards.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 10
+    },
+    {
+      "enName": "Arcane Focus: Orb",
+      "esName": "",
+      "enDesc": "Spellcasting Focus for Sorcerers, Warlocks and Wizards.",
+      "esDesc": "",
+      "weight": 3,
+      "cost": 20
+    },
+    {
+      "enName": "Arcane Focus: Rod",
+      "esName": "",
+      "enDesc": "Spellcasting Focus for Sorcerers, Warlocks and Wizards.",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 10
+    },
+    {
+      "enName": "Arcane Focus: Staff",
+      "esName": "",
+      "enDesc": "Spellcasting Focus for Sorcerers, Warlocks and Wizards.",
+      "esDesc": "",
+      "weight": 4,
+      "cost": 5
+    },
+    {
+      "enName": "Arcane Focus: Wand",
+      "esName": "",
+      "enDesc": "Spellcasting Focus for Sorcerers, Warlocks and Wizards.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 10
+    },
+    {
+      "enName": "Backpack",
+      "esName": "",
+      "enDesc": "A backpack holds up to 30 pounds within 1 cubic foot. It can also serve as a saddlebag.",
+      "esDesc": "",
+      "weight": 5,
+      "cost": 2
+    },
+    {
+      "enName": "Ball Bearings",
+      "esName": "",
+      "enDesc": "As a Utilize action, you can spill Ball Bearings from their pouch. They spread to cover a level, 10-foot-square area within 10 feet of yourself. A creature that enters this area for the first time on a turn must succeed on a DC 10 Dexterity saving throw or have the Prone condition. It takes 10 minutes to recover the Ball Bearings.",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 1
+    },
+    {
+      "enName": "Barrel",
+      "esName": "",
+      "enDesc": "A barrel holds up to 40 gallons of liquid or up to 4 cubic feet of dry goods.",
+      "esDesc": "",
+      "weight": 70,
+      "cost": 2
+    },
+    {
+      "enName": "Basket",
+      "esName": "",
+      "enDesc": "A basket holds up to 40 pounds within 2 cubic feet.",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 0.4
+    },
+    {
+      "enName": "Bedroll",
+      "esName": "",
+      "enDesc": "A Bedroll sleeps one Small or Medium creature. While in a Bedroll, you automatically succeed on saving throws against extreme cold.",
+      "esDesc": "",
+      "weight": 7,
+      "cost": 1
+    },
+    {
+      "enName": "Bell",
+      "esName": "",
+      "enDesc": "When rung as a Utilize action, a Bell produces a sound that can be heard up to 60 feet away.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 1
+    },
+    {
+      "enName": "Blanket",
+      "esName": "",
+      "enDesc": "While wrapped in a blanket, you have Advantage on saving throws against extreme cold.",
+      "esDesc": "",
+      "weight": 3,
+      "cost": 0.5
+    },
+    {
+      "enName": "Block and Tackle",
+      "esName": "",
+      "enDesc": "A block and Tackle alows you to hoist up to four times the weight you can normally lift.",
+      "esDesc": "",
+      "weight": 5,
+      "cost": 1
+    },
+    {
+      "enName": "Book",
+      "esName": "",
+      "enDesc": "A book contains fiction or nonfiction. If you consult an accurate nonfiction Book about its topic, you gain a +5 bonus to Intelligence (Arcana, History, Nature, or Religion) checks you make about that topic.",
+      "esDesc": "",
+      "weight": 5,
+      "cost": 25
+    },
+    {
+      "enName": "Bottle, Glass",
+      "esName": "",
+      "enDesc": "A Glass Bottle holds up to 1 and a half pints.",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 2
+    },
+    {
+      "enName": "Bucket",
+      "esName": "",
+      "enDesc": "A bucket holds up to half a cubic foot of contents.",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 0.05
+    },
+    {
+      "enName": "Pack: Burglar's Pack",
+      "esName": "",
+      "enDesc": "Contains: Backpack, Ball Bearings, Bell, 10 Candles, Crowbar, Hooded Lantern, 7 flasks of Oil, 5 days of Rations, Rope, Tinderbox, and a Waterskin.",
+      "esDesc": "",
+      "weight": 42,
+      "cost": 16
+    },
+    {
+      "enName": "Pack: Diplomat's Pack",
+      "esName": "",
+      "enDesc": "Contains: Chest, Fine Clothes, Ink, 5 Ink Pens, Lamp, 2 Map or Scroll Cases, 4 flasks of Oul, 5 sheets of Paper, 5 sheets of Parchment, Perfume, and Tinderbox.",
+      "esDesc": "",
+      "weight": 39,
+      "cost": 39
+    },
+    {
+      "enName": "Pack: Dungeneer's Pack",
+      "esName": "",
+      "enDesc": "Contains: Backpack, Caltrops, Crowbar, 2 flasks of Oil, 10 days of Rations, Rope, Tinderbox, 10 Torches and Waterskin.",
+      "esDesc": "",
+      "weight": 55,
+      "cost": 12
+    },
+    {
+      "enName": "Pack: Entertainer's Pack",
+      "esName": "",
+      "enDesc": "Contains: Backpack, Bedroll, Bell, Bullseye Lantern, 3 Costumes, Mirror, 8 Flasks of Oil, 9 days of Rations, Tinderbox, and Waterskin.",
+      "esDesc": "",
+      "weight": 58.5,
+      "cost": 40
+    },
+    {
+      "enName": "Pack: Explorer's Pack",
+      "esName": "",
+      "enDesc": "Contains: Backpack, Bedroll, 2 flasks of Oil, 10 days of Rations, Rope, Tinderbox, 10 Torches, and Waterskin.",
+      "esDesc": "",
+      "weight": 55,
+      "cost": 10
+    },
+    {
+      "enName": "Pack: Priest's Pack",
+      "esName": "",
+      "enDesc": "Contains: Backpack, Blanket, Holy Water, Lamp, 7 days of Rations, Robe, and Tinderbox.",
+      "esDesc": "",
+      "weight": 29,
+      "cost": 33
+    },
+    {
+      "enName": "Pack: Scholar's Pack",
+      "esName": "",
+      "enDesc": "Contains: Backpack, Book, Ink, Ink Pen, Lamp, 10 flasks of Oil, 10 sheets of Parchment, and Tinderbox.",
+      "esDesc": "",
+      "weight": 22,
+      "cost": 40
+    },
+    {
+      "enName": "Caltrops",
+      "esName": "",
+      "enDesc": "As a Utilize action, you can spread Caltrops from their bag to cover a 5-foot-square area within 5 feet of yourself. A creature that enters this area for the first time on a turn must succeed on a DC 15 Dexterity saving throw or take 1 Piercing damage and have its Speed reduced to 0 until the start of its next turn. It takes 10 minutes to recover the Caltrops.",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 1
+    },
+    {
+      "enName": "Candle",
+      "esName": "",
+      "enDesc": "For 1 hour, a lit Candle sheds Bright Light in a 5-foot radius and Dim Light for an additional 5 feet.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 0.01
+    },
+    {
+      "enName": "Quiver",
+      "esName": "",
+      "enDesc": "Holds up to 20 Arrows.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 1
+    },
+    {
+      "enName": "Case for Crossbow Bolts",
+      "esName": "",
+      "enDesc": "Holds up to 20 Bolts.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 1
+    },
+    {
+      "enName": "Case for Map or Scroll",
+      "esName": "",
+      "enDesc": "Holds up to 10 sheets of paper of 5 sheets of parchment.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 1
+    },
+    {
+      "enName": "Chain",
+      "esName": "",
+      "enDesc": "As a Utilize action, you can wrap a Chain around an unwilling creature within 5 feet of yourself that has the Grappled, Incapacitated or Restrained condition if you succeed on a DC 13 Athletics check. If the legs are bound, the creature has the Restrained condition until it escapes. Escaping the Chain requires the creature to make a successful dc 18 Acrobatics check as an action. Bursting the Chain requires a successful DC 20 Athletics check as an action.",
+      "esDesc": "",
+      "weight": 10,
+      "cost": 5
+    },
+    {
+      "enName": "Chest",
+      "esName": "",
+      "enDesc": "A chest holds up to 12 cubic feet of contents.",
+      "esDesc": "",
+      "weight": 25,
+      "cost": 5
+    },
+    {
+      "enName": "Kit: Climber's Kit",
+      "esName": "",
+      "enDesc": "Includes: Boot tips, gloves, pitons and a harness. As a Utilize action, you can use the kit to anchor yourself; when you do, you can't fall more than 25 feet from the anchor point, and you can't move more than 25 feet from there without undoing the anchor as a bonus action.",
+      "esDesc": "",
+      "weight": 12,
+      "cost": 25
+    },
+    {
+      "enName": "Clothes, Fine",
+      "esName": "",
+      "enDesc": "Fine Clothes are made of expensive fabrics and adorned with expertly crafted details. Some events and locations admit only people wearing these clothes.",
+      "esDesc": "",
+      "weight": 6,
+      "cost": 15
+    },
+    {
+      "enName": "Clothes, Traveler's",
+      "esName": "",
+      "enDesc": "Traveler's Clothes are resilient garments designed for travel in various environments.",
+      "esDesc": "",
+      "weight": 4,
+      "cost": 2
+    },
+    {
+      "enName": "Component Pouch",
+      "esName": "",
+      "enDesc": "A Component Pouch is watertight and filled with compartments that hold all the free Material components of your spells.",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 25
+    },
+    {
+      "enName": "Costume",
+      "esName": "",
+      "enDesc": "While wearing a Costume, you have Advantage on any ability check that you make to impersonate the person or type of person it represents.",
+      "esDesc": "",
+      "weight": 4,
+      "cost": 5
+    },
+    {
+      "enName": "Crowbar",
+      "esName": "",
+      "enDesc": "Using a Crowbar gives you Advantage on Strength checks where the Crowbar's leverage can be applied.",
+      "esDesc": "",
+      "weight": 5,
+      "cost": 2
+    },
+    {
+      "enName": "Druidic Focus: Sprig of Mistletoe",
+      "esName": "",
+      "enDesc": "Spellcasting Focus for Druids and Rangers.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 1
+    },
+    {
+      "enName": "Druidic Focus: Wooden Staff",
+      "esName": "",
+      "enDesc": "Spellcasting Focus for Druids and Rangers.",
+      "esDesc": "",
+      "weight": 4,
+      "cost": 5
+    },
+    {
+      "enName": "Druidic Focus: Yew Wand",
+      "esName": "",
+      "enDesc": "Spellcasting Focus for Druids and Rangers.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 10
+    },
+    {
+      "enName": "Flask",
+      "esName": "",
+      "enDesc": "A Flask holds up to 1 pint.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 0.02
+    },
+    {
+      "enName": "Grappling Hook",
+      "esName": "",
+      "enDesc": "As a Utilize action, you can throw the Grappling Hook at a railing, a ledge, or another catch within 50 feet of yourself, and the hook catches on if you succeed on a DC 13 Acrobatics check. If you tied a Rope to the hook, you can then climb it.",
+      "esDesc": "",
+      "weight": 4,
+      "cost": 2
+    },
+    {
+      "enName": "Healer's Kit",
+      "esName": "",
+      "enDesc": "A Healer's Kit has ten uses. As a Utilize action, you can expend one of its uses to stabilize an Unconscious creature that has 0 Hit Points without needing to make a Medicine check.",
+      "esDesc": "",
+      "weight": 3,
+      "cost": 5
+    },
+    {
+      "enName": "Holy Symbol: Amulet",
+      "esName": "",
+      "enDesc": "Spellcasting Focus for Clerics and Paladins. Amulets can be worn or held.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 5
+    },
+    {
+      "enName": "Holy Symbol: Emblem",
+      "esName": "",
+      "enDesc": "Spellcasting Focus for Clerics and Paladins. Emblems can be borne on fabric or a shield.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 5
+    },
+    {
+      "enName": "Holy Symbol: Reliquary",
+      "esName": "",
+      "enDesc": "Spellcasting Focus for Clerics and Paladins. Reliquaries must be held.",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 5
+    },
+    {
+      "enName": "Holy Water",
+      "esName": "",
+      "enDesc": "When you take the Attack action, you can replace one of your attacks with throwing a flask of Holy Water. Target one creature you can see within 20 feet of yourself. The target must succeed on a Dexterity saving throw (DC 8 + your Dexterity Modifier + Proficiency Bonus) or take 2d8 Radiant damage if it is a Fiend or an Undead.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 25
+    },
+    {
+      "enName": "Hunting Trap",
+      "esName": "",
+      "enDesc": "As a Utilize action, you can set a Hunting Trap, which is a sawtooth steel ring ithat snaos shut when a creature steps on a pressure plate in the center. The trap is affixed by a heavy chain to an immovabile object, such as a tree or a spike driven into the ground. A creature that steps on the plate must succeed on a DC 13 Dexterity saving throw or take 1d4 Piercing damage and have its Speed reduced to 0 until the start of its next turn. Thereafter, until the creature breaks free of the trap, its movement is limited by the length of the chain (typically 3 feet). A creature can use its action to make a DC 13 Athletics check, freeing itself or another creature within its reach on a success. Each failed check deals 1 Piercing damage to the trapped creature.",
+      "esDesc": "",
+      "weight": 25,
+      "cost": 5
+    },
+    {
+      "enName": "Ink",
+      "esName": "",
+      "enDesc": "Ink comes in a 1-ounce bottle, which provides enough ink to write about 500 pages.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 10
+    },
+    {
+      "enName": "Ink Pen",
+      "esName": "",
+      "enDesc": "Using Ink, an Ink Pen is used to write or draw.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 0.02
+    },
+    {
+      "enName": "Jug",
+      "esName": "",
+      "enDesc": "A Jug holds up to 1 gallon.",
+      "esDesc": "",
+      "weight": 4,
+      "cost": 0.02
+    },
+    {
+      "enName": "Ladder",
+      "esName": "",
+      "enDesc": "A Ladder is 10 feet tall. You must climb to move up or down it.",
+      "esDesc": "",
+      "weight": 25,
+      "cost": 0.1
+    },
+    {
+      "enName": "Lamp",
+      "esName": "",
+      "enDesc": "A Lamp burns Oil as fuel to cast Bright Light in a 15-foot radius and Dim Light for an additional 30 feet.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 0.5
+    },
+    {
+      "enName": "Lantern, Bullseye",
+      "esName": "",
+      "enDesc": "A Bullseye Lantern burns Oil as fuel to cast Bright Light in a 60-foot cone and Dim Light for an additional 60 feet.",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 10
+    },
+    {
+      "enName": "Lantern, Hooded",
+      "esName": "",
+      "enDesc": "A Hooded Lantern burns Oil as fuel to cast Bright Light in a 30-foot radius and Dim Light for an additional 30 feet. As a Bonus Action, you can lower the hood, reducing the light to Dim Light in a 5-foot radius or raise it again.",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 5
+    },
+    {
+      "enName": "Lock",
+      "esName": "",
+      "enDesc": "A lock comes with a key. Without the key, a creature can use Thieves' Toolds to pick this Lock with a successful DC 15 Sleight of Hand check.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 10
+    },
+    {
+      "enName": "Magnifying Glass",
+      "esName": "",
+      "enDesc": "A Magnifying Glass grants Advantage on any ability check made to appraise or inspect a highly detailed item. Lighting a fire with a Magnifying Glass requires light as bright as sunlight to focus, tinder to ignite, and about 5 minutes for the fire to ignite.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 100
+    },
+    {
+      "enName": "Manacles",
+      "esName": "",
+      "enDesc": "As a Utilize action, you can use Manacles to bind an unwilling Small or Medium creature within 5 feet of yourself that has the Grappled, Incapacitated or Restrained condition if you succeed on a DC 13 Sleight of Hand check. While bound, a creature has Disadvantage on attack rolls, and the creature is Restrained if the Manacles ara attached to a chain or hook that is fixed in place. Escaping the Manacles requires a successful DC 20 Sleight of Hand check as an action. Bursting them requires a successful DC 25 Athletics check as an action. Each set of Manacles comes with a key, Without the key, a creature can use Thieves' Tools to pick the Manacles' lock with a successful DC 15 Sleight of Hand check.",
+      "esDesc": "",
+      "weight": 6,
+      "cost": 2
+    },
+    {
+      "enName": "Map",
+      "esName": "",
+      "enDesc": "If you consul an accurate Map, you gain a +5 bonus to Survival checks you make to find your way in the place represented on it.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 1
+    },
+    {
+      "enName": "Mirror",
+      "esName": "",
+      "enDesc": "A handheld steel Mirror is useful for personal cosmetics but also for peeking around corners and reflecting light as a signal.",
+      "esDesc": "",
+      "weight": 0.5,
+      "cost": 5
+    },
+    {
+      "enName": "Net",
+      "esName": "",
+      "enDesc": "When you take the Attack action, you can replace one of your attacks with throwing a Net. Target a creature you can see within 15 feet of yourself. The target must succeed on a Dexterity saving throw (DC 8 + your Dexterity modifier + Proficiency Bonus) or have the Restrained condition until it escapes. The target succeeds automatically if it is Huge or larger. To escape, the target or a creature within 5 feet of it must take an action to make a DC 10 Athletics check, freeing the Restrained creature on a success. Destroying the Net (AC 10; 5HP; Immunity to Bludgeoning, Poison, and Psychic damage) also frees the target, ending the effect.",
+      "esDesc": "",
+      "weight": 3,
+      "cost": 1
+    },
+    {
+      "enName": "Oil",
+      "esName": "",
+      "enDesc": "You can douse a creature, object, or space with Oil or use it as fuel. Dousing a Creature or an Object: When you take the Attack action, you can replace one of your attacks with throwing an Oil flask. Target one creature or object within 20 feet of yourself. The target must succeed on a Dexterity saabing throw (DC 8 + your Dexterity modifier + Proficiency Bonus) or be covered in oil. If the target takes Fire damage before the oil dries (after 1 minute), the target takes an extra 5 Fire damage from burning oil. Dousing a Space. You can take the Utilize action to pour an Oil flask on level ground to cover a 5-foot-square area within 5 feet of yourself. If lit, the oil burns until the end of the turn 2 rounds from when the oil was lit (or 12 seconds) and deals 5 Fire damage to any creature that enters the area or ends its turn there. A creature can take this damage only once per turn. Fuel: Oil serves as fuel for Lamps and Lanterns. Once lit, a flask of Oil burns for 6 hours in a Lamp or Lantern. That duration doesn't need to be consecutive; you can extinguish the burning Oil (as a Utilize action) and rekindle it again until it has burned for a total of 6 hours.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 0.1
+    },
+    {
+      "enName": "Paper",
+      "esName": "",
+      "enDesc": "One sheet of Paper can hold about 250 handwritten words.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 0.2
+    },
+    {
+      "enName": "Parchment",
+      "esName": "",
+      "enDesc": "One sheet of Parchment can hold about 250 hand-written words.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 0.1
+    },
+    {
+      "enName": "Perfume",
+      "esName": "",
+      "enDesc": "Perfume comes in a 4-ounce vial. For 1 hour after applying Perfume to yourself, you have Advantage on Persuassion checks made to influence an Indifferent Humanoid within 5 feet of yourself.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 5
+    },
+    {
+      "enName": "Poison, Basic",
+      "esName": "",
+      "enDesc": "As a Bonus Action, you can use a vial of Basic Poison to coat one weapon or up to three pieces of ammunition. A creature that takes Piercing or Slashing damage from the poisoned weapon or ammunition takes an extra 1d4 Poison damage. Once applied, the poison retains potency for 1 minute or until its damage is dealt, whichever comes first.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 100
+    },
+    {
+      "enName": "Pole",
+      "esName": "",
+      "enDesc": "A pole is 10 feet long. You can use it to touch something up to 10 feet away. If you must make an Athletics check as part of a High or Long Jump, you can use the Pole to vault, giving yourself Advantage on the check.",
+      "esDesc": "",
+      "weight": 7,
+      "cost": 0.05
+    },
+    {
+      "enName": "Pot, Iron",
+      "esName": "",
+      "enDesc": "An Iron Pot holds up to 1 gallon.",
+      "esDesc": "",
+      "weight": 10,
+      "cost": 2
+    },
+    {
+      "enName": "Potion of Healing",
+      "esName": "",
+      "enDesc": "This potion is a magic item. As a Bonus Action, you can drink it or administer it to another creature within 5 feet of yourself. The creature that drinks the magical red fluid in this vial regains 2d4 + 2 HP.",
+      "esDesc": "",
+      "weight": 0.5,
+      "cost": 50
+    },
+    {
+      "enName": "Pouch",
+      "esName": "",
+      "enDesc": "A Pouch holds up to 6 pounds within one-fifth of a cubic foot.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 0.5
+    },
+    {
+      "enName": "Ram, Portable",
+      "esName": "",
+      "enDesc": "You can use a Portable Ram to break down doors. When doing so, you gain a +4 bonus to the Strength check. One other character can help you use the ram, giving you advantage on this check.",
+      "esDesc": "",
+      "weight": 35,
+      "cost": 4
+    },
+    {
+      "enName": "Rations",
+      "esName": "",
+      "enDesc": "Rations consist of travel-ready food, including jerky, dried fruit, hardtack, and nuts. See \"Malnutrition\" in the rules glossary for the risks of not eating.",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 0.5
+    },
+    {
+      "enName": "Robe",
+      "esName": "",
+      "enDesc": "A Robe has vocational or ceremonial significance. Some events and locations admit only people wearing a Robe bearing certain colors or symbols.",
+      "esDesc": "",
+      "weight": 4,
+      "cost": 1
+    },
+    {
+      "enName": "Rope",
+      "esName": "",
+      "enDesc": "As a Utilize action, you can tie a knot with a Rope if you succeed on a DC 10 Sleight of Hand check. The rope can be burst with a Successful DC 20 Athletics check. You can bind an unwilling creature with the Rope only if the creature has the Grappled, Incapacitated, or Restrained condition. If the creature's legs are bound, the creature has the Restrained condition until it escapes. Escaping the Rope requires the creature to make a successful DC 15 Acrobatics check as an action.",
+      "esDesc": "",
+      "weight": 5,
+      "cost": 1
+    },
+    {
+      "enName": "Sack",
+      "esName": "",
+      "enDesc": "A Sack holds up to 30 pounds within 1 cubic foot.",
+      "esDesc": "",
+      "weight": 0.5,
+      "cost": 0.01
+    },
+    {
+      "enName": "Shovel",
+      "esName": "",
+      "enDesc": "Working for 1 hour, you can use a shovel to dig a hola that is 5 feet on each side in soil or similar material.",
+      "esDesc": "",
+      "weight": 5,
+      "cost": 2
+    },
+    {
+      "enName": "Signal Whistle",
+      "esName": "",
+      "enDesc": "When blown as a Utilize action, a Signal Whistle produces a sound that can be heard up to 600 feet away.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 0.05
+    },
+    {
+      "enName": "Spell Scroll (Cantrip)",
+      "esName": "",
+      "enDesc": "A Spell Scrooll (Cantrip) is a magic item that bears the words of a cantrip spell determined by the scroll's creator. If the spell is on your class' spell list, you can reat the scroll and cast the spell using its normal casting time and without providing any Material components. If the spell requires a saving throw or an attack roll, the spell save DC is 13, and the attack bonus is +5. The scroll desintegrates when the casting is completed.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 30
+    },
+    {
+      "enName": "Spell Scroll (Level 1)",
+      "esName": "",
+      "enDesc": "A Spell Scrooll (Level 1) is a magic item that bears the words of a level 1 spell determined by the scroll's creator. If the spell is on your class' spell list, you can reat the scroll and cast the spell using its normal casting time and without providing any Material components. If the spell requires a saving throw or an attack roll, the spell save DC is 13, and the attack bonus is +5. The scroll desintegrates when the casting is completed.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 50
+    },
+    {
+      "enName": "Spikes, Iron",
+      "esName": "",
+      "enDesc": "Iron Spikes come in bundles of then. As a Utilzie action, you can use a blunt object, such as a Light Hammer, to hammer a spike into wood, earth or a similar material. You can do so to jam a door shut or to then tie a Rope or Chain to the Spike.",
+      "esDesc": "",
+      "weight": 5,
+      "cost": 1
+    },
+    {
+      "enName": "Spyglass",
+      "esName": "",
+      "enDesc": "Objects viewed throug a Spyglass are magnified to twice their size.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 1000
+    },
+    {
+      "enName": "String",
+      "esName": "",
+      "enDesc": "A String is 10 feet long. You can tie a knot in it as a Utilize action.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 0.1
+    },
+    {
+      "enName": "Tent",
+      "esName": "",
+      "enDesc": "A tent sleeps up to two Small or Medium creatures.",
+      "esDesc": "",
+      "weight": 20,
+      "cost": 2
+    },
+    {
+      "enName": "Tinderbox",
+      "esName": "",
+      "enDesc": "A Tinderbox is a small container holding flint, fire, steel and tinder (usually dry cloth soaked in light oil) used to kindle a fire. Using it to light a Candle, Lamp, Lanter or Torch - or anything else with exposed fuel - takes a Bonus Action. Lightin any other fire takes 1 minute.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 0.5
+    },
+    {
+      "enName": "Torch",
+      "esName": "",
+      "enDesc": "A torch burns for 1 hour, casting Bright Light in a 20-foot radius and Dim Light for an additional 20 feet. When you take the Attack action, you can attack with the torch, using it as a Simple Melee weapon. On a hit, the target takes 1 Fire damage.",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 0.01
+    },
+    {
+      "enName": "Vial",
+      "esName": "",
+      "enDesc": "A vial holds up to 4 ounces.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 1
+    },
+    {
+      "enName": "Waterskin",
+      "esName": "",
+      "enDesc": "A waterskin holds up to 4 pints. If you don't drink sufficient water, you risk dehydration.",
+      "esDesc": "",
+      "weight": 5,
+      "cost": 0.2
+    },
+    {
+      "enName": "Mount: Camel",
+      "esName": "",
+      "enDesc": "Carrying Capacity: 450 lb.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 50
+    },
+    {
+      "enName": "Mount: Elephant",
+      "esName": "",
+      "enDesc": "Carrying Capacity: 1,320 lb.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 200
+    },
+    {
+      "enName": "Mount: Horse, Draft",
+      "esName": "",
+      "enDesc": "Carrying Capacity: 540 lb.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 50
+    },
+    {
+      "enName": "Mount: Horse, Riding",
+      "esName": "",
+      "enDesc": "Carrying Capacity: 480 lb.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 75
+    },
+    {
+      "enName": "Mount: Mastiff",
+      "esName": "",
+      "enDesc": "Carrying Capacity: 195 lb.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 25
+    },
+    {
+      "enName": "Mount: Mule",
+      "esName": "",
+      "enDesc": "Carrying Capacity: 420 lb.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 8
+    },
+    {
+      "enName": "Mount: Pony",
+      "esName": "",
+      "enDesc": "Carrying Capacity: 225 lb.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 30
+    },
+    {
+      "enName": "Mount: Warhorse",
+      "esName": "",
+      "enDesc": "Carrying Capacity: 540 lb.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 400
+    },
+    {
+      "enName": "Land Vehicle: Carriage",
+      "esName": "",
+      "enDesc": "Weight: 600 lb.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 100
+    },
+    {
+      "enName": "Land Vehicle: Cart",
+      "esName": "",
+      "enDesc": "Weight: 200 lb.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 15
+    },
+    {
+      "enName": "Land Vehicle: Chariot",
+      "esName": "",
+      "enDesc": "Weight: 100 lb.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 250
+    },
+    {
+      "enName": "Saddle, Exotic",
+      "esName": "",
+      "enDesc": "Required for flying or aquatic mounts.",
+      "esDesc": "",
+      "weight": 40,
+      "cost": 60
+    },
+    {
+      "enName": "Saddle, Military",
+      "esName": "",
+      "enDesc": "Gives advantage on any ability checks you make to remain mounted.",
+      "esDesc": "",
+      "weight": 30,
+      "cost": 20
+    },
+    {
+      "enName": "Saddle, Riding",
+      "esName": "",
+      "enDesc": "Economic saddle to ride mounts.",
+      "esDesc": "",
+      "weight": 25,
+      "cost": 10
+    },
+    {
+      "enName": "Land Vehicle: Sled",
+      "esName": "",
+      "enDesc": "Weight: 300 lb.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 20
+    },
+    {
+      "enName": "Land Vehicle: Wagon",
+      "esName": "",
+      "enDesc": "Weight: 400 lb.",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 35
+    },
+    {
+      "enName": "Tool: Alchemist's Supplies",
+      "esName": "",
+      "enDesc": "Ability: Intelligence. Utilize: Identify a substance (DC 15), or start a fire (DC 15). Craft: Acid, Alchemist's Fire, Component Pouch, Oil, Paper, Perfume.",
+      "esDesc": "",
+      "weight": 8,
+      "cost": 50
+    },
+    {
+      "enName": "Tool: Brewer's Supplies",
+      "esName": "",
+      "enDesc": "Ability: Intelligence. Utilize: Detect poisoned drink (DC 15), or identify alcohol (DC 10). Craft: Antitoxin.",
+      "esDesc": "",
+      "weight": 9,
+      "cost": 20
+    },
+    {
+      "enName": "Tool: Calligrapher's Supplies",
+      "esName": "",
+      "enDesc": "Ability: Dexterity. Utilize: Write text with impressive flourishes that guard against forgery (DC 15). Craft: Ink, Spell Scroll.",
+      "esDesc": "",
+      "weight": 5,
+      "cost": 10
+    },
+    {
+      "enName": "Tool: Carpenter's Tools",
+      "esName": "",
+      "enDesc": "Ability: Strength. Utilize: Seal or pry open a door or container (DC 20). Craft: Club, Gratclub, Quarterstaff, Barrel, Chest, Ladder, Pole, Portable Ram, Torch.",
+      "esDesc": "",
+      "weight": 6,
+      "cost": 8
+    },
+    {
+      "enName": "Tool: Cartographer's Tools",
+      "esName": "",
+      "enDesc": "Ability: Wisdom. Utilize: Draft a map of a small area (DC 15). Craft: Map.",
+      "esDesc": "",
+      "weight": 6,
+      "cost": 15
+    },
+    {
+      "enName": "Tool: Cobbler's Tools",
+      "esName": "",
+      "enDesc": "Ability: Dexterity. Utilize: Modify footwear to giva Advantage on the wearer's next Acrobatics check (DC 10). Craft: Climber's kit.",
+      "esDesc": "",
+      "weight": 5,
+      "cost": 5
+    },
+    {
+      "enName": "Tool: Cook's Utensils",
+      "esName": "",
+      "enDesc": "Ability: Wisdom. Utilize: Improve food's flavor (DC 10), ir detect spoiled or poisoned food (DC 15). Craft: Rations.",
+      "esDesc": "",
+      "weight": 8,
+      "cost": 1
+    },
+    {
+      "enName": "Tool: Glassblower's Tools",
+      "esName": "",
+      "enDesc": "Ability: Intelligence. Utilize: Discern what a glass object held in the past 24 hours (DC 15). Craft: Glass Bottle, Magnifying Glass, Spyglass. Vial.",
+      "esDesc": "",
+      "weight": 30,
+      "cost": 5
+    },
+    {
+      "enName": "Tool: Jewler's Tools",
+      "esName": "",
+      "enDesc": "Ability: Intelligence. Utilize: Discern a gem's value (DC 15). Craft: Arcane Focus, Holy Symbol.",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 25
+    },
+    {
+      "enName": "Tool: Leatherworker's Tools",
+      "esName": "",
+      "enDesc": "Ability: Dexterity. Utilize: Add a design to a leather item (DC 10). Craft: Sling, Whip, Hide Armor, Leather Armor, Studded Leather Armor, Backpack, Crossbow Bolt Case, Map or Scroll Case, Parchment, Pouch, Quiver, Waterskin.",
+      "esDesc": "",
+      "weight": 5,
+      "cost": 5
+    },
+    {
+      "enName": "Tool: Mason's Tools",
+      "esName": "",
+      "enDesc": "Ability: Strength. Utilize: Chisel a symbol or hole in stone (DC 10). Craft: Block and Tackle.",
+      "esDesc": "",
+      "weight": 8,
+      "cost": 10
+    },
+    {
+      "enName": "Tool: Painter's Supplies",
+      "esName": "",
+      "enDesc": "Ability: Wisdom. Utilize: Paint a recognizable image of something you've seen (DC 10). Craft: Druidic Focus, Holy Symbol.",
+      "esDesc": "",
+      "weight": 5,
+      "cost": 10
+    },
+    {
+      "enName": "Tool: Potter's Tools",
+      "esName": "",
+      "enDesc": "Ability: Intelligence. Utilize: Discern what a ceramic object held in the past 24 hours (DC 15). Craft: Jug, Lamp.",
+      "esDesc": "",
+      "weight": 3,
+      "cost": 10
+    },
+    {
+      "enName": "Tool: Smith's Tools",
+      "esName": "",
+      "enDesc": "Ability: Strength. Utilize: Pry open a door or containter (DC 20). Craft: Any Melee weapon (except Club, Greatclub, Quarterstaff, and Whip), Medium armor (except Hide), Heavy armor, Ball Bearings, Bucket, Caltrops, Chain, Crowbar, Firearm Bullets, Grappling Hook, Iron Pot, Iron Spikes, Sling Bullets.",
+      "esDesc": "",
+      "weight": 8,
+      "cost": 20
+    },
+    {
+      "enName": "Tool: Tinker's Tools",
+      "esName": "",
+      "enDesc": "Ability: Dexterity. Utilize: Assemble a Tiny item composed of scrap, which falls apart in 1 minute (DC 20). Craft: Musket, Pistol, Bell, Bullseye Lantern, Flask, Hooded Lantern, Hunting Trap, Lock, Manacles, Mirror, Shovel, Signal Whistle, Tinderbox.",
+      "esDesc": "",
+      "weight": 10,
+      "cost": 50
+    },
+    {
+      "enName": "Tool: Weaver's Tools",
+      "esName": "",
+      "enDesc": "Ability: Dexterity. Utilize: Ment a tear in clothing (DC 10), or sew a tiny design (DC 10). Craft: Padded Armor, Basket, Bedroll, Blanket, Fine Clothes, Net, Robe, Rope, Sack, String, Tent, Traveler's Clothes.",
+      "esDesc": "",
+      "weight": 5,
+      "cost": 1
+    },
+    {
+      "enName": "Tool: Woodcarver's Tools",
+      "esName": "",
+      "enDesc": "Ability: Dexterity. Utilize: Carve a pattern in wood (DC 10). Craft: Club, Greatclub, Quarterstaff, Ranged weapons (except Pistol, Musket and Sling), Arcane Focusm Arrows, Bolds, Druidic Focus, Ink Pen, Needles.",
+      "esDesc": "",
+      "weight": 5,
+      "cost": 1
+    },
+    {
+      "enName": "Kit: Disguise Kit",
+      "esName": "",
+      "enDesc": "Ability: Charisma. Utilize: Apply makeup (DC 10). Craft: Costume.",
+      "esDesc": "",
+      "weight": 3,
+      "cost": 25
+    },
+    {
+      "enName": "Kit: Forgery Kit",
+      "esName": "",
+      "enDesc": "Ability: Dexterity. Utilize: Mimic 10 or fewer words of someone else's handwriting (DC 15) or duplicate a wax seal (DC 20).",
+      "esDesc": "",
+      "weight": 5,
+      "cost": 15
+    },
+    {
+      "enName": "Gaming Set: Dice",
+      "esName": "",
+      "enDesc": "Ability: Wisdom. Utilize: Discern wether someone is cheating (DC 10) or win the game (DC 20).",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 0.1
+    },
+    {
+      "enName": "Gaming Set: Dragonchess",
+      "esName": "",
+      "enDesc": "Ability: Wisdom. Utilize: Discern wether someone is cheating (DC 10) or win the game (DC 20).",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 1
+    },
+    {
+      "enName": "Gaming Set: Playing Cards",
+      "esName": "",
+      "enDesc": "Ability: Wisdom. Utilize: Discern wether someone is cheating (DC 10) or win the game (DC 20).",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 0.5
+    },
+    {
+      "enName": "Gaming Set: Three-dragon Ante",
+      "esName": "",
+      "enDesc": "Ability: Wisdom. Utilize: Discern wether someone is cheating (DC 10) or win the game (DC 20).",
+      "esDesc": "",
+      "weight": 0,
+      "cost": 1
+    },
+    {
+      "enName": "Kit: Herbalism Kit",
+      "esName": "",
+      "enDesc": "Ability: Intelligence. Utilize: Identify a plant (DC 10). Craft: Antitoxin, Candle, Healer's Kit, Potion of Healing.",
+      "esDesc": "",
+      "weight": 3,
+      "cost": 5
+    },
+    {
+      "enName": "Tool: Navigator's Tools",
+      "esName": "",
+      "enDesc": "Ability: Wisdom. Utilize: Plot a course (DC 10), or determine position by stargazing (DC 15).",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 25
+    },
+    {
+      "enName": "Kit: Poisoner's Kit",
+      "esName": "",
+      "enDesc": "Ability: Intelligence. Utilize: Detect a poisoned object (DC 10). Craft: Basic Poison.",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 50
+    },
+    {
+      "enName": "Tool: Thieves' Tools",
+      "esName": "",
+      "enDesc": "Ability: Dexterity. Utilize: Pick a lock (DC 15), or disarm a trap (DC 15).",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 25
+    },
+    {
+      "enName": "Musical Instrument: Bagpipes",
+      "esName": "",
+      "enDesc": "Ability: Charisma. Utilize: Play a known tune (DC 10), or improvise a song (DC 15).",
+      "esDesc": "",
+      "weight": 6,
+      "cost": 30
+    },
+    {
+      "enName": "Musical Instrument: Drum",
+      "esName": "",
+      "enDesc": "Ability: Charisma. Utilize: Play a known tune (DC 10), or improvise a song (DC 15).",
+      "esDesc": "",
+      "weight": 3,
+      "cost": 6
+    },
+    {
+      "enName": "Musical Instrument: Dulcimer",
+      "esName": "",
+      "enDesc": "Ability: Charisma. Utilize: Play a known tune (DC 10), or improvise a song (DC 15).",
+      "esDesc": "",
+      "weight": 10,
+      "cost": 25
+    },
+    {
+      "enName": "Musical Instrument: Flute",
+      "esName": "",
+      "enDesc": "Ability: Charisma. Utilize: Play a known tune (DC 10), or improvise a song (DC 15).",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 2
+    },
+    {
+      "enName": "Musical Instrument: Horn",
+      "esName": "",
+      "enDesc": "Ability: Charisma. Utilize: Play a known tune (DC 10), or improvise a song (DC 15).",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 3
+    },
+    {
+      "enName": "Musical Instrument: Lute",
+      "esName": "",
+      "enDesc": "Ability: Charisma. Utilize: Play a known tune (DC 10), or improvise a song (DC 15).",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 35
+    },
+    {
+      "enName": "Musical Instrument: Lyre",
+      "esName": "",
+      "enDesc": "Ability: Charisma. Utilize: Play a known tune (DC 10), or improvise a song (DC 15).",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 30
+    },
+    {
+      "enName": "Musical Instrument: Pan Flute",
+      "esName": "",
+      "enDesc": "Ability: Charisma. Utilize: Play a known tune (DC 10), or improvise a song (DC 15).",
+      "esDesc": "",
+      "weight": 2,
+      "cost": 12
+    },
+    {
+      "enName": "Musical Instrument: Shawm",
+      "esName": "",
+      "enDesc": "Ability: Charisma. Utilize: Play a known tune (DC 10), or improvise a song (DC 15).",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 2
+    },
+    {
+      "enName": "Musical Instrument: Viol",
+      "esName": "",
+      "enDesc": "Ability: Charisma. Utilize: Play a known tune (DC 10), or improvise a song (DC 15).",
+      "esDesc": "",
+      "weight": 1,
+      "cost": 30
+    }
+  ]
+}
