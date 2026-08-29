@@ -1,0 +1,452 @@
+:root {
+    --color-primary: #d73953;
+
+    --color-black: #090909;
+    --color-white: #ffffff;
+    --color-light-grey: #f3f3f3;
+    --color-dark-grey: #353535;
+
+    --text-color: var(--color-black);
+    --color-header: #f7fad2;
+    --color-main: #ffffff;
+    --color-footer: #929292;
+
+    --footer-height: 100vh;
+
+    --font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-family-title: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-size-small: 1.2rem;
+    --font-size-medium: 1.6rem;
+    --font-size-large: 1.8rem;
+    --font-size-x-large: 2.3rem;
+    --font-size-xx-large: 4.8rem;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+
+    --transition-duration: .3s;
+    --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+/* VARIABLES END */
+
+/* RESET START */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* RESET END */
+
+/* GENERIC START */
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+
+    color: var(--text-color);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-base);
+
+    display: flex;
+    flex-direction: column;
+    flex-flow: column;
+    align-content: center;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-title);
+    font-weight: var(--font-weight-bold);
+}
+
+a:link {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:visited {
+    font-style: italic;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: var(--text-color);
+}
+
+.atomic-age {
+    font-family: 'Atomic Age';
+    font-weight: 400;
+    font-style: normal;
+}
+
+.unselectable {
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+/* GENERIC END */
+
+/* HEADER AND FOOTER START */
+#body-header {
+    top: 0;
+    width: 100%;
+    position: fixed;
+}
+
+#body-header > * {
+    min-height: 1rem;
+    width: 100%;
+}
+
+.header-div {
+    background-color: var(--color-header);
+    padding: 0 5vw;
+}
+
+#header-nav li a {
+    display: block;
+    padding: 10px;
+}
+
+#header {
+    width: 100%;
+    padding: 0;
+
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#header-name-div {
+    padding-left: 2.5vw;
+}
+
+#header-dropdown-div {
+    padding-right: 0;
+}
+
+#header-dropdown-btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 2vh 2.5vw;
+    font-size: 16px;
+    border: none;
+}
+
+#header-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 2.5vw;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+#header-dropdown-content a {
+    color: black;
+    padding: 12px 2.5vw;
+    text-decoration: none;
+    display: block;
+}
+
+#header-dropdown-content a:hover {background-color: #ddd;}
+#header-dropdown:hover #header-dropdown-content {display: block;}
+#header-dropdown:hover #header-dropdown-btn {background-color: #3e8e41;}
+
+#header ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#header-name {
+    font-size: large;
+    padding: 0;
+}
+
+
+#header-nav {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+#header-nav ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+
+#header-nav li a {
+    padding: 2vh 3vw;
+}
+
+#header-nav a:hover {
+    color: white;
+    background-color: red;
+    text-decoration: none;
+}
+/* HEADER AND FOOTER END */
+
+/* MATH START */
+#math-main {
+    height: 93vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+#math-select-div {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+}
+.math-select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+#math-select-areas {
+    display: block;
+}
+#math-select-programs {
+    display: block;
+}
+.math-hr {
+    width:99.8%;
+    text-align:left;
+    margin: 0 0 1rem 0;
+}
+#math-main {
+    height: 93vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+#math-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+.math-matrix {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+}
+.math-matrix-coefficient {
+    width: 4rem;
+    height: 2rem;
+    margin: 0 1rem 2.5rem 1rem;
+    border: 0.5px solid rgb(118, 118, 118);
+    background-color: rgb(252, 252, 255);
+}
+.math-matrix-table-data-input {
+    text-align: center;
+    width: 5rem;
+    height: 2.5rem;
+    margin: 2px;
+}
+.math-matrix-table-data-input:disabled {
+    color: black;
+}
+.math-program-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+.math-center-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.math-height-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.math-width-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.math-size-button-plus, .math-size-button-minus {
+    height: 2rem;
+    width: 2rem;
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgb(118, 118, 118);
+}
+.math-size-button-plus {
+    background-color: rgb(250, 255, 250);
+}
+.math-size-button-minus {
+    background-color: rgb(255, 250, 250)
+}
+.math-input-matrix-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#math-matrix-power-input {
+    text-align: center;
+    vertical-align: center;
+    width: 4rem;
+    height: 2rem;
+    margin: 2px;
+}
+.math-power-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
+#math-mult-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+#math-mult-table {
+    height: 100%;
+    display: table;
+    table-layout: fixed;
+}
+.math-mult-table-row {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: center;
+}
+.math-mult-table-data {
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#math-mult-table-data-00 {
+    width: 283px;
+    justify-content: flex-end;
+}
+#math-mult-table-data-10 {
+    justify-content: flex-end;
+}
+#math-mult-table-data-01 {
+    justify-content: flex-start;
+}
+#math-mult-table-data-11 {
+    justify-content: flex-start;
+    padding-left: 4rem;
+}
+#math-error-message {
+    display: none;
+    color: red;
+    margin: 4px;
+}
+.math-calc-button {
+    margin: 2px 1rem 2rem 1rem;
+    border: 0.5px solid rgb(118, 118, 118);
+}
+#math-power-program-wrapper {
+    align-items: center;
+}
+.math-operation-p {
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+}
+.math-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+.math-info-h1 {
+    margin: 2rem;
+}
+.math-info-p {
+    margin: 2rem;
+}
+/* MATH END */
