@@ -1,10 +1,20 @@
-import { MatrixDiv } from "./visuals/matrixDiv.js";
+import MatrixDiv from "./visuals/matrixDiv.js";
+import ZoomControl from "./visuals/zoom.js";
 
-// Wrapper
-const wrapper = document.createElement("div");
-wrapper.id = "math-mult-wrapper";
-wrapper.classList.add("math-program-wrapper");
-wrapper.classList.add("unselectable");
+// Zoom Wrapper
+const zoomWrapper = document.createElement("div");
+zoomWrapper.id = "math-gal-zoom-wrapper";
+zoomWrapper.classList.add("math-gal-zoom-wrapper");
+zoomWrapper.classList.add("unselectable");
+
+// Zoom
+const zoom = new ZoomControl();
+
+// Main Wrapper
+const mainWrapper = document.createElement("div");
+mainWrapper.id = "math-mult-wrapper";
+mainWrapper.classList.add("math-program-wrapper");
+mainWrapper.classList.add("unselectable");
 
 // * Matrix mult table
 // Table
@@ -47,13 +57,16 @@ matrixTable.appendChild(matrixTableRow0);
 matrixTable.appendChild(matrixTableRow1);
 
 // Input1
-const multMatrixInput1 = new MatrixDiv(3, 3, {"idSuffix": "mult-0"});
+const matrixInput1 = new MatrixDiv(3, 3, {"idSuffix": "mult-10"});
 
 // Input 2
-const multMatrixInput2 = new MatrixDiv(3, 3, {"idSuffix": "mult-1"});
+const matrixInput2 = new MatrixDiv(3, 3, {"idSuffix": "mult-01"});
 
 // Output
-const multMatrixOutput = new MatrixDiv(3, 3, {"idSuffix": "mult-2", "disabled": true});
+const matrixOutput = new MatrixDiv(3, 3, {"idSuffix": "mult-11", "disabled": true, "hideWithCollision": true});
+
+// Hidden
+const matrixHidden = new MatrixDiv(3, 3, {"idSuffix": "mult-00", "hidden": true, "hideWithCollision": true, "disabled": true});
 
 // Button
 const multCalculateButton = document.createElement("button");
@@ -63,24 +76,27 @@ multCalculateButton.textContent = "Calc";
 
 // Logic
 multCalculateButton.onclick = () => {
-    const input1 = multMatrixInput1.getCurrentMatrix();
-    const input2 = multMatrixInput2.getCurrentMatrix();
-    multMatrixOutput.loadMatrix(input1.multByMatrix(input2));
+    const input1 = matrixInput1.getCurrentMatrix();
+    const input2 = matrixInput2.getCurrentMatrix();
+    matrixOutput.loadMatrix(input1.multByMatrix(input2));
 }
 
 // Builds
-const matrixInput1Build = multMatrixInput1.build();
-const matrixInput2Build = multMatrixInput2.build();
-const matrixOutputBuild = multMatrixOutput.build();
+const matrixInput1Build = matrixInput1.build();
+const matrixInput2Build = matrixInput2.build();
+const matrixOutputBuild = matrixOutput.build();
+const matrixHiddenBuild = matrixHidden.build();
 
 // File-Column control buttons behaviour change
 function addShared() {
-    multMatrixInput1.addColumn();
-    multMatrixInput2.addFile();
+    matrixInput1.addColumn();
+    matrixHidden.addColumn();
+    matrixInput2.addFile();
 }
 function removeShared() {
-    multMatrixInput1.removeColumn();
-    multMatrixInput2.removeFile();
+    matrixInput1.removeColumn();
+    matrixHidden.removeColumn();
+    matrixInput2.removeFile();
 }
 matrixInput2Build.querySelector("#" + matrixInput2Build.id + '-button-height-plus').onclick = addShared;
 matrixInput2Build.querySelector("#" + matrixInput2Build.id + '-button-height-minus').onclick = removeShared;
@@ -88,10 +104,15 @@ matrixInput1Build.querySelector("#" + matrixInput1Build.id + '-button-width-plus
 matrixInput1Build.querySelector("#" + matrixInput1Build.id + '-button-width-minus').onclick = removeShared;
 
 // Appends
-matrixTableData10.appendChild(matrixInput1Build);
+matrixTableData00.appendChild(matrixHiddenBuild);
 matrixTableData01.appendChild(matrixInput2Build);
+matrixTableData10.appendChild(matrixInput1Build);
 matrixTableData11.appendChild(matrixOutputBuild);
-wrapper.appendChild(matrixTable);
-wrapper.appendChild(multCalculateButton);
 
-export default wrapper;
+mainWrapper.appendChild(matrixTable);
+mainWrapper.appendChild(multCalculateButton);
+
+zoomWrapper.appendChild(zoom.build());
+zoomWrapper.appendChild(mainWrapper);
+
+export default zoomWrapper;

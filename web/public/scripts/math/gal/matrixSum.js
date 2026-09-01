@@ -1,9 +1,19 @@
-import { MatrixDiv } from "./visuals/matrixDiv.js";
+import MatrixDiv from "./visuals/matrixDiv.js";
+import ZoomControl from "./visuals/zoom.js";
+
+// Zoom Wrapper
+const zoomWrapper = document.createElement("div");
+zoomWrapper.id = "math-gal-zoom-wrapper";
+zoomWrapper.classList.add("math-gal-zoom-wrapper");
+zoomWrapper.classList.add("unselectable");
+
+// Zoom
+const zoom = new ZoomControl();
 
 // Wrapper
-const wrapper = document.createElement("div");
-wrapper.classList.add("math-program-wrapper");
-wrapper.classList.add("unselectable");
+const mainWrapper = document.createElement("div");
+mainWrapper.classList.add("math-program-wrapper");
+mainWrapper.classList.add("unselectable");
 
 // Input1
 const matrixInput1 = new MatrixDiv(3, 3, {"idSuffix": "sum-0"});
@@ -79,10 +89,13 @@ matrixInput1Build.querySelector("#" + matrixInput1Build.id + '-button-width-minu
 matrixInput2Build.querySelector("#" + matrixInput2Build.id + '-button-width-minus').onclick = removeWidth;
 
 // Appends
-wrapper.appendChild(matrixInput1Build);
-wrapper.appendChild(plusDiv);
-wrapper.appendChild(matrixInput2Build);
-wrapper.appendChild(centerDiv);
-wrapper.appendChild(matrixOutputBuild);
+mainWrapper.appendChild(matrixInput1Build);
+mainWrapper.appendChild(plusDiv);
+mainWrapper.appendChild(matrixInput2Build);
+mainWrapper.appendChild(centerDiv);
+mainWrapper.appendChild(matrixOutputBuild);
 
-export default wrapper;
+zoomWrapper.appendChild(zoom.build());
+zoomWrapper.appendChild(mainWrapper);
+
+export default zoomWrapper;

@@ -52,6 +52,8 @@ const programSelect = document.getElementById(PROGRAMSELECTID);
 const areaSelect = document.getElementById(AREASSELECTID);
 
 function populateAreaSelect() {
+    content.textContent = '';
+    areaSelect.textContent = '';
     for (const areas in programsByArea) {
         const option = document.createElement("option");
         option.id = AREASSELECTOPTIONID + areas;
@@ -64,16 +66,15 @@ function populateAreaSelect() {
 }
 populateAreaSelect();
 
-areaSelect.addEventListener('change', function() {
+function populateProgramSelect() {
     content.textContent = '';
     programSelect.textContent = '';
-    
-    if (areaSelect.value === "none")
+    if (areaSelect.value === "")
         return;
 
     const programs = programsByArea[areaSelect.value];
     if (programs === null || programs === undefined)
-        throw new Error("Area not found");
+        throw new Error("Area not found.");
 
     if (Object.keys(programs).length === 0)
         return;
@@ -88,11 +89,14 @@ areaSelect.addEventListener('change', function() {
         programSelect.appendChild(option);
     }
     content.appendChild(programsByArea[areaSelect.value][programSelect.value]);
-});
+}
+populateProgramSelect();
+
+areaSelect.addEventListener('change', populateProgramSelect);
 
 programSelect.addEventListener('change', function() {
     content.textContent = '';
-    if (programSelect.value === "none")
+    if (areaSelect.value === "")
         return;
 
     const program = programsByArea[areaSelect.value][programSelect.value];
@@ -102,7 +106,6 @@ programSelect.addEventListener('change', function() {
 
     content.appendChild(program);
 });
-content.appendChild(programsByArea.Info.Info);
 
 window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
     const errorP = document.getElementById("math-error-message");
@@ -119,24 +122,4 @@ addEventListener("mousedown", (event) => {
         event.target.className.includes("math-size-button-minus")
     )
         document.getElementById("math-error-message").style.display = "none";
-})
-
-addEventListener("click", (event) => {
-    if (
-        (
-            event.target.className.includes("math-size-button-plus") ||
-            event.target.className.includes("math-size-button-minus")
-        ) &&
-        programSelect.value === "Matrix Multiplication"
-    ) {
-        const cell00 = document.getElementById("math-mult-table-data-00");
-        const cell10 = document.getElementById("math-mult-table-data-10");
-        const wrapper = document.getElementById("math-mult-wrapper");
-        if (wrapper.style.marginLeft === "")
-            wrapper.style.marginLeft = "0";
-        if (wrapper.offsetLeft < 0)
-            wrapper.style.marginLeft = `${parseFloat(wrapper.style.marginLeft.replace("px", "")) + wrapper.offsetLeft * -1.5}px`;
-        if (cell00.clientWidth !== cell10.clientWidth)
-            cell00.style.width = `${cell10.clientWidth}px`;
-    }
 })

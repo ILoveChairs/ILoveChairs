@@ -1,9 +1,19 @@
-import { MatrixDiv } from "./visuals/matrixDiv.js";
+import MatrixDiv from "./visuals/matrixDiv.js";
+import ZoomControl from "./visuals/zoom.js";
+
+// Zoom Wrapper
+const zoomWrapper = document.createElement("div");
+zoomWrapper.id = "math-gal-zoom-wrapper";
+zoomWrapper.classList.add("math-gal-zoom-wrapper");
+zoomWrapper.classList.add("unselectable");
+
+// Zoom
+const zoom = new ZoomControl();
 
 // Wrapper
-const wrapperDiv = document.createElement("div");
-wrapperDiv.classList.add("math-program-wrapper");
-wrapperDiv.classList.add("unselectable");
+const mainWrapper = document.createElement("div");
+mainWrapper.classList.add("math-program-wrapper");
+mainWrapper.classList.add("unselectable");
 
 // Input matrix
 const matrixInput = new MatrixDiv(3, 3, {"idSuffix": "trans-0"});
@@ -34,8 +44,11 @@ calculateButton.onclick = () => {
 }
 
 // Appends
-wrapperDiv.appendChild(matrixInput.build());
-wrapperDiv.appendChild(centerDiv);
-wrapperDiv.appendChild(matrixOutput.build());
+mainWrapper.appendChild(matrixInput.build());
+mainWrapper.appendChild(centerDiv);
+mainWrapper.appendChild(matrixOutput.build());
 
-export default wrapperDiv;
+zoomWrapper.appendChild(zoom.build());
+zoomWrapper.appendChild(mainWrapper);
+
+export default zoomWrapper;

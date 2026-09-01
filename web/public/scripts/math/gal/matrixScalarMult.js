@@ -1,12 +1,22 @@
-import { MatrixDiv } from "./visuals/matrixDiv.js";
+import MatrixDiv from "./visuals/matrixDiv.js";
+import ZoomControl from "./visuals/zoom.js";
+
+// Zoom Wrapper
+const zoomWrapper = document.createElement("div");
+zoomWrapper.id = "math-gal-zoom-wrapper";
+zoomWrapper.classList.add("math-gal-zoom-wrapper");
+zoomWrapper.classList.add("unselectable");
+
+// Zoom
+const zoom = new ZoomControl();
 
 // Wrapper
-const multWrapperDiv = document.createElement("div");
-multWrapperDiv.classList.add("math-program-wrapper");
-multWrapperDiv.classList.add("unselectable");
+const mainWrapper = document.createElement("div");
+mainWrapper.classList.add("math-program-wrapper");
+mainWrapper.classList.add("unselectable");
 
 // Input matrix
-const multMatrixInput = new MatrixDiv(3, 3, {"idSuffix": "scalarMult-0"});
+const MatrixInput = new MatrixDiv(3, 3, {"idSuffix": "scalarMult-0"});
 
 // Center
 const centerDiv = document.createElement("div");
@@ -29,13 +39,16 @@ const matrixOutput = new MatrixDiv(3, 3, {"idSuffix": "scalarMult-1", "disabled"
 
 // Logic
 calculateButton.onclick = () => {
-    const input = multMatrixInput.getCurrentMatrix();
+    const input = MatrixInput.getCurrentMatrix();
     matrixOutput.loadMatrix(input);
 }
 
 // Appends
-multWrapperDiv.appendChild(multMatrixInput.build());
-multWrapperDiv.appendChild(centerDiv);
-multWrapperDiv.appendChild(matrixOutput.build());
+mainWrapper.appendChild(MatrixInput.build());
+mainWrapper.appendChild(centerDiv);
+mainWrapper.appendChild(matrixOutput.build());
 
-export default multWrapperDiv;
+zoomWrapper.appendChild(zoom.build());
+zoomWrapper.appendChild(mainWrapper);
+
+export default zoomWrapper;
